@@ -2,6 +2,7 @@ package com.example.gastroarchaeology.item;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
 import com.example.gastroarchaeology.block.GastroABlocks;
+import com.example.gastroarchaeology.effect.GatroAMobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -32,6 +33,7 @@ public class GastroAItems {
                     GastroABlocks.PEPPERS.get(),
                     new Item.Properties().food(new FoodProperties.Builder()
                                         .fast()
+                                        .effect(() -> new MobEffectInstance(GatroAMobEffects.BURNING, 0, 3), 1F)
                                         .build())
             )
     );

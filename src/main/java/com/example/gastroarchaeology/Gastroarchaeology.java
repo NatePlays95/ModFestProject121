@@ -1,8 +1,10 @@
 package com.example.gastroarchaeology;
 
 import com.example.gastroarchaeology.block.GastroABlocks;
+import com.example.gastroarchaeology.effect.GatroAMobEffects;
 import com.example.gastroarchaeology.item.GastroAItems;
 import com.example.gastroarchaeology.loot.modifiers.GastroALootModifiers;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import org.slf4j.Logger;
 
@@ -81,6 +83,7 @@ public class Gastroarchaeology
 
         GastroAItems.register(modEventBus);
         GastroABlocks.register(modEventBus);
+        GatroAMobEffects.register(modEventBus);
         GastroALootModifiers.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
@@ -122,5 +125,9 @@ public class Gastroarchaeology
         {
 
         }
+    }
+
+    public static ResourceLocation fromPath(String path){
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
     }
 }
