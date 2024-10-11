@@ -7,8 +7,8 @@ import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
-public class GastroarchaeologyBlockStateProvider extends BlockStateProvider {
-    public GastroarchaeologyBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
+public class GastroABlockStateProvider extends BlockStateProvider {
+    public GastroABlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, Gastroarchaeology.MOD_ID, exFileHelper);
     }
 

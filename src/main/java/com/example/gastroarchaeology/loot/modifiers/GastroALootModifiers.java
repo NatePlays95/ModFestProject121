@@ -9,17 +9,17 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.function.Supplier;
 
-public class GastroarchaeologyLootModifiers {
+public class GastroALootModifiers {
 
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> GLOBAL_LOOT_MODIFIER_SERIALIZERS =
             DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Gastroarchaeology.MOD_ID);
 
 
 
-    public static final Supplier<MapCodec<GastroarchaeologyLootModifier>> MY_LOOT_MODIFIER =
-            GLOBAL_LOOT_MODIFIER_SERIALIZERS.register("my_loot_modifier", () -> GastroarchaeologyLootModifier.CODEC);
-    public static final Supplier<MapCodec<RandomOverrideLootModifier>> RANDOM_OVERRIDE_LOOT_MODIFIER =
-            GLOBAL_LOOT_MODIFIER_SERIALIZERS.register("random_override_loot_modifier", () -> RandomOverrideLootModifier.CODEC);
+    public static final Supplier<MapCodec<GastroALootModifier>> MY_LOOT_MODIFIER =
+            GLOBAL_LOOT_MODIFIER_SERIALIZERS.register("my_loot_modifier", () -> GastroALootModifier.CODEC);
+    public static final Supplier<MapCodec<GastroARandomOverrideLootModifier>> RANDOM_OVERRIDE_LOOT_MODIFIER =
+            GLOBAL_LOOT_MODIFIER_SERIALIZERS.register("random_override_loot_modifier", () -> GastroARandomOverrideLootModifier.CODEC);
 
     public static void register(IEventBus eventBus) {
         GLOBAL_LOOT_MODIFIER_SERIALIZERS.register(eventBus);

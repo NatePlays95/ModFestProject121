@@ -1,6 +1,6 @@
 package com.example.gastroarchaeology.block;
 
-import com.example.gastroarchaeology.item.GastroarchaeologyItems;
+import com.example.gastroarchaeology.item.GastroAItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
@@ -29,7 +29,7 @@ public class CassavaBlock extends CropBlock {
 
     @Override
     protected @NotNull ItemLike getBaseSeedId() {
-        return GastroarchaeologyItems.CASSAVA;
+        return GastroAItems.CASSAVA;
     }
 
     @Override

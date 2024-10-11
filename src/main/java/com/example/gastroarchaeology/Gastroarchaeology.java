@@ -1,8 +1,8 @@
 package com.example.gastroarchaeology;
 
-import com.example.gastroarchaeology.block.GastroarchaeologyBlocks;
-import com.example.gastroarchaeology.item.GastroarchaeologyItems;
-import com.example.gastroarchaeology.loot.modifiers.GastroarchaeologyLootModifiers;
+import com.example.gastroarchaeology.block.GastroABlocks;
+import com.example.gastroarchaeology.item.GastroAItems;
+import com.example.gastroarchaeology.loot.modifiers.GastroALootModifiers;
 import net.minecraft.world.item.*;
 import org.slf4j.Logger;
 
@@ -62,11 +62,11 @@ public class Gastroarchaeology
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.gastroarchaeology")) //The language key for the title of your CreativeModeTab
             .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> new ItemStack(GastroarchaeologyItems.PEPPER.get()))
+            .icon(() -> new ItemStack(GastroAItems.PEPPER.get()))
             .displayItems((parameters, output) -> {
-                output.accept(new ItemStack((GastroarchaeologyItems.TOMATO.get())));
-                output.accept(new ItemStack((GastroarchaeologyItems.CASSAVA.get())));
-                output.accept(new ItemStack((GastroarchaeologyItems.PEPPER.get())));
+                output.accept(new ItemStack((GastroAItems.TOMATO.get())));
+                output.accept(new ItemStack((GastroAItems.CASSAVA.get())));
+                output.accept(new ItemStack((GastroAItems.PEPPER.get())));
             })
             .build());
 
@@ -79,9 +79,9 @@ public class Gastroarchaeology
 
         CREATIVE_MODE_TABS.register(modEventBus);
 
-        GastroarchaeologyItems.register(modEventBus);
-        GastroarchaeologyBlocks.register(modEventBus);
-        GastroarchaeologyLootModifiers.register(modEventBus);
+        GastroAItems.register(modEventBus);
+        GastroABlocks.register(modEventBus);
+        GastroALootModifiers.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
@@ -92,7 +92,7 @@ public class Gastroarchaeology
         modEventBus.addListener(this::addCreative);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
-        modContainer.registerConfig(ModConfig.Type.COMMON, GastroarchaeologyConfig.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, GastroAConfig.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)

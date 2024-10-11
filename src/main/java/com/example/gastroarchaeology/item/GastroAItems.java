@@ -1,25 +1,24 @@
 package com.example.gastroarchaeology.item;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
-import com.example.gastroarchaeology.block.GastroarchaeologyBlocks;
+import com.example.gastroarchaeology.block.GastroABlocks;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class GastroarchaeologyItems {
+public class GastroAItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Gastroarchaeology.MOD_ID);
 
     public static final DeferredItem<Item> CASSAVA = ITEMS.register(
             "cassava",
             () -> new ItemNameBlockItem(
-                    GastroarchaeologyBlocks.CASSAVAS.get(),
+                    GastroABlocks.CASSAVAS.get(),
                     new Item.Properties().food(new FoodProperties.Builder()
                                         .nutrition(1)
                                         .saturationModifier(0.3f)
@@ -30,7 +29,7 @@ public class GastroarchaeologyItems {
     public static final DeferredItem<Item> PEPPER = ITEMS.register(
             "pepper",
             () -> new ItemNameBlockItem(
-                    GastroarchaeologyBlocks.PEPPERS.get(),
+                    GastroABlocks.PEPPERS.get(),
                     new Item.Properties().food(new FoodProperties.Builder()
                                         .fast()
                                         .build())
@@ -39,7 +38,7 @@ public class GastroarchaeologyItems {
     public static final DeferredItem<Item> TOMATO = ITEMS.register(
             "tomato",
             () -> new ItemNameBlockItem(
-                    GastroarchaeologyBlocks.TOMATOES.get(),
+                    GastroABlocks.TOMATOES.get(),
                     new Item.Properties().food(new FoodProperties.Builder()
                                         .nutrition(1)
                                         .saturationModifier(0.1f)

@@ -8,7 +8,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
-public class GastroarchaeologyTags {
+public class GastroATags {
     public static class Blocks {
 //        public static final TagKey<Block> NEEDS_MACHALITE_TOOL = createTag("needs_machalite_tool");
 //        public static final TagKey<Block> INCORRECT_FOR_MACHALITE_TOOL = createTag("incorrect_for_machalite_tool");

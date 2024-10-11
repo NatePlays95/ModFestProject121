@@ -6,14 +6,14 @@ import net.neoforged.neoforge.common.data.DataMapProvider;
 
 import java.util.concurrent.CompletableFuture;
 
-public class GastroarchaeologyDataMapProvider extends DataMapProvider {
+public class GastroADataMapProvider extends DataMapProvider {
     /**
      * Create a new provider.
      *
      * @param packOutput     the output location
      * @param lookupProvider a {@linkplain CompletableFuture} supplying the registries
      */
-    protected GastroarchaeologyDataMapProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+    protected GastroADataMapProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(packOutput, lookupProvider);
     }
 

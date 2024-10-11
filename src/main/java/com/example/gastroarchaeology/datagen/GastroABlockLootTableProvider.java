@@ -1,6 +1,6 @@
 package com.example.gastroarchaeology.datagen;
 
-import com.example.gastroarchaeology.block.GastroarchaeologyBlocks;
+import com.example.gastroarchaeology.block.GastroABlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -18,8 +18,8 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.Set;
 
-public class GastroarchaeologyBlockLootTableProvider extends BlockLootSubProvider {
-    protected GastroarchaeologyBlockLootTableProvider(HolderLookup.Provider registries) {
+public class GastroABlockLootTableProvider extends BlockLootSubProvider {
+    protected GastroABlockLootTableProvider(HolderLookup.Provider registries) {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags(), registries);
     }
 
@@ -80,6 +80,6 @@ public class GastroarchaeologyBlockLootTableProvider extends BlockLootSubProvide
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return GastroarchaeologyBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
+        return GastroABlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }
 }

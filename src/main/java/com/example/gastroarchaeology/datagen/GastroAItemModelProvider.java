@@ -9,8 +9,8 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 
-public class GastroarchaeologyItemModelProvider extends ItemModelProvider {
-    public GastroarchaeologyItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+public class GastroAItemModelProvider extends ItemModelProvider {
+    public GastroAItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, Gastroarchaeology.MOD_ID, existingFileHelper);
     }
 

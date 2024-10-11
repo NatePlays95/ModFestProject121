@@ -1,7 +1,7 @@
 package com.example.gastroarchaeology.block;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
-import com.example.gastroarchaeology.item.GastroarchaeologyItems;
+import com.example.gastroarchaeology.item.GastroAItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -15,7 +15,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class GastroarchaeologyBlocks {
+public class GastroABlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Gastroarchaeology.MOD_ID);
 
 
@@ -76,7 +76,7 @@ public class GastroarchaeologyBlocks {
     }
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
-        GastroarchaeologyItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        GastroAItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {

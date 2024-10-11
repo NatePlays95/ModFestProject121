@@ -11,8 +11,8 @@ import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-public class GastroarchaeologyRecipeProvider extends RecipeProvider implements IConditionBuilder {
-    public GastroarchaeologyRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
+public class GastroARecipeProvider extends RecipeProvider implements IConditionBuilder {
+    public GastroARecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries);
     }
 

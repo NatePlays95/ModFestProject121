@@ -13,15 +13,15 @@ import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
 
 // We cannot use a record because records cannot extend other classes.
-public class GastroarchaeologyLootModifier extends LootModifier {
+public class GastroALootModifier extends LootModifier {
 
-    public static final MapCodec<GastroarchaeologyLootModifier> CODEC = RecordCodecBuilder.mapCodec(inst ->
+    public static final MapCodec<GastroALootModifier> CODEC = RecordCodecBuilder.mapCodec(inst ->
             // LootModifier#codecStart adds the conditions field.
             LootModifier.codecStart(inst).and(inst.group(
                     Codec.STRING.fieldOf("field1").forGetter(e -> e.field1),
                     Codec.INT.fieldOf("field2").forGetter(e -> e.field2),
                     BuiltInRegistries.ITEM.byNameCodec().fieldOf("field3").forGetter(e -> e.field3)
-            )).apply(inst, GastroarchaeologyLootModifier::new)
+            )).apply(inst, GastroALootModifier::new)
     );
 
     // Our extra properties.
@@ -30,7 +30,7 @@ public class GastroarchaeologyLootModifier extends LootModifier {
     private final Item field3;
 
     // First constructor parameter is the list of conditions. The rest is our extra properties.
-    public GastroarchaeologyLootModifier(LootItemCondition[] conditions, String field1, int field2, Item field3) {
+    public GastroALootModifier(LootItemCondition[] conditions, String field1, int field2, Item field3) {
         super(conditions);
         this.field1 = field1;
         this.field2 = field2;

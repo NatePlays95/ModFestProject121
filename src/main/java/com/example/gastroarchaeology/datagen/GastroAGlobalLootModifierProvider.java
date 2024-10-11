@@ -1,12 +1,11 @@
 package com.example.gastroarchaeology.datagen;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
-import com.example.gastroarchaeology.item.GastroarchaeologyItems;
-import com.example.gastroarchaeology.loot.modifiers.RandomOverrideLootModifier;
+import com.example.gastroarchaeology.item.GastroAItems;
+import com.example.gastroarchaeology.loot.modifiers.GastroARandomOverrideLootModifier;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
@@ -15,9 +14,9 @@ import net.neoforged.neoforge.common.loot.LootTableIdCondition;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-public class GastroarchaeologyGlobalLootModifierProvider extends GlobalLootModifierProvider {
+public class GastroAGlobalLootModifierProvider extends GlobalLootModifierProvider {
     // Get the PackOutput from GatherDataEvent.
-    public GastroarchaeologyGlobalLootModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+    public GastroAGlobalLootModifierProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, lookupProvider, Gastroarchaeology.MOD_ID);
     }
 
@@ -44,12 +43,12 @@ public class GastroarchaeologyGlobalLootModifierProvider extends GlobalLootModif
 
         add(
                 "desert_well_modifier",
-                new RandomOverrideLootModifier(
+                new GastroARandomOverrideLootModifier(
                     new LootItemCondition[] {
                             LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/desert_well")).build()
                     },
                     0.5f,
-                    GastroarchaeologyItems.PEPPER.get(),
+                    GastroAItems.PEPPER.get(),
                     1, 3
                 ),
                 List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID))

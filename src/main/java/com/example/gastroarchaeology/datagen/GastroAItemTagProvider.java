@@ -10,9 +10,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
-public class GastroarchaeologyItemTagProvider extends ItemTagsProvider {
+public class GastroAItemTagProvider extends ItemTagsProvider {
 
-    public GastroarchaeologyItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTags, @Nullable ExistingFileHelper existingFileHelper) {
+    public GastroAItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, CompletableFuture<TagLookup<Block>> blockTags, @Nullable ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, blockTags, Gastroarchaeology.MOD_ID, existingFileHelper);
     }
 
