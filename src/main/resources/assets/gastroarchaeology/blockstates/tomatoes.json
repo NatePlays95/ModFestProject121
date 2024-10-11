@@ -1,0 +1,28 @@
+{
+	"variants": {
+		"age\u003d0": {
+			"model": "gastroarchaeology:block/tomatoes_stage0"
+		},
+		"age\u003d1": {
+			"model": "gastroarchaeology:block/tomatoes_stage0"
+		},
+		"age\u003d2": {
+			"model": "gastroarchaeology:block/tomatoes_stage1"
+		},
+		"age\u003d3": {
+			"model": "gastroarchaeology:block/tomatoes_stage1"
+		},
+		"age\u003d4": {
+			"model": "gastroarchaeology:block/tomatoes_stage2"
+		},
+		"age\u003d5": {
+			"model": "gastroarchaeology:block/tomatoes_stage2"
+		},
+		"age\u003d6": {
+			"model": "gastroarchaeology:block/tomatoes_stage2"
+		},
+		"age\u003d7": {
+			"model": "gastroarchaeology:block/tomatoes_stage3"
+		}
+	}
+}
