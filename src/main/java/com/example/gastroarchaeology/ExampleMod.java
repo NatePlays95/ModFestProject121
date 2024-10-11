@@ -2,6 +2,7 @@ package com.example.gastroarchaeology;
 
 import com.example.gastroarchaeology.block.ModBlocks;
 import com.example.gastroarchaeology.item.ModItems;
+import com.example.gastroarchaeology.loot.modifiers.ModLootModifiers;
 import net.minecraft.world.item.*;
 import org.slf4j.Logger;
 
@@ -93,6 +94,7 @@ public class ExampleMod
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
