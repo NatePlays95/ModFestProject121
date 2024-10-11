@@ -1,5 +1,6 @@
 {
 	"parent": "minecraft:block/crop",
+	"render_type": "cutout",
 	"textures": {
 		"crop": "gastroarchaeology:block/peppers_stage1"
 	}

@@ -62,7 +62,7 @@ public class Gastroarchaeology
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.gastroarchaeology")) //The language key for the title of your CreativeModeTab
             .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> new ItemStack(Items.PUMPKIN_PIE))
+            .icon(() -> new ItemStack(GastroarchaeologyItems.PEPPER.get()))
             .displayItems((parameters, output) -> {
                 output.accept(new ItemStack((GastroarchaeologyItems.TOMATO.get())));
                 output.accept(new ItemStack((GastroarchaeologyItems.CASSAVA.get())));

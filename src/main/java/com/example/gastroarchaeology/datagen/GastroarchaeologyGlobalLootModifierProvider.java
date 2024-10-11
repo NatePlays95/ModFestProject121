@@ -1,6 +1,7 @@
 package com.example.gastroarchaeology.datagen;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
+import com.example.gastroarchaeology.item.GastroarchaeologyItems;
 import com.example.gastroarchaeology.loot.modifiers.RandomOverrideLootModifier;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -48,7 +49,7 @@ public class GastroarchaeologyGlobalLootModifierProvider extends GlobalLootModif
                             LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/desert_well")).build()
                     },
                     0.5f,
-                    Items.PUMPKIN_SEEDS,
+                    GastroarchaeologyItems.PEPPER.get(),
                     1, 3
                 ),
                 List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID))

@@ -2,6 +2,9 @@ package com.example.gastroarchaeology.item;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
 import com.example.gastroarchaeology.block.GastroarchaeologyBlocks;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -17,22 +20,30 @@ public class GastroarchaeologyItems {
             "cassava",
             () -> new ItemNameBlockItem(
                     GastroarchaeologyBlocks.CASSAVAS.get(),
-                    new Item.Properties().food(Foods.POTATO)
+                    new Item.Properties().food(new FoodProperties.Builder()
+                                        .nutrition(1)
+                                        .saturationModifier(0.3f)
+                                        .effect(() -> new MobEffectInstance(MobEffects.POISON, 600, 0), 0.5F)
+                                        .build())
             )
     );
     public static final DeferredItem<Item> PEPPER = ITEMS.register(
             "pepper",
             () -> new ItemNameBlockItem(
                     GastroarchaeologyBlocks.PEPPERS.get(),
-                    new Item.Properties().food(Foods.POTATO)
+                    new Item.Properties().food(new FoodProperties.Builder()
+                                        .fast()
+                                        .build())
             )
     );
     public static final DeferredItem<Item> TOMATO = ITEMS.register(
             "tomato",
             () -> new ItemNameBlockItem(
                     GastroarchaeologyBlocks.TOMATOES.get(),
-                    new Item.Properties()
-                            .food(Foods.POTATO)
+                    new Item.Properties().food(new FoodProperties.Builder()
+                                        .nutrition(1)
+                                        .saturationModifier(0.1f)
+                                        .build())
             )
     );
 
