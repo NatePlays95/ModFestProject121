@@ -1,5 +1,5 @@
 {
-  "itemGroup.examplemod": "Example Mod Tab",
-  "block.examplemod.example_block": "Example Block",
-  "item.examplemod.example_item": "Example Item"
+  "itemGroup.gastroarchaeology": "Example Mod Tab",
+  "block.gastroarchaeology.example_block": "Example Block",
+  "item.gastroarchaeology.example_item": "Example Item"
 }
