@@ -33,7 +33,7 @@ public class GastroAItems {
                     GastroABlocks.PEPPERS.get(),
                     new Item.Properties().food(new FoodProperties.Builder()
                                         .fast()
-                                        .effect(() -> new MobEffectInstance(GatroAMobEffects.BURNING, 0, 3), 1F)
+                                        .effect(() -> new MobEffectInstance(GatroAMobEffects.BURNING, 60, 1), 1F)
                                         .build())
             )
     );
