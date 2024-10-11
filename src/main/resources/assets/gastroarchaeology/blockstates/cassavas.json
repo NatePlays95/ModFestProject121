@@ -1,7 +1,7 @@
 {
 	"variants": {
 		"age\u003d0": {
-			"model": "gastroarchaeology:block/carrots_stage0"
+			"model": "gastroarchaeology:block/cassavas_stage0"
 		},
 		"age\u003d1": {
 			"model": "gastroarchaeology:block/cassavas_stage0"

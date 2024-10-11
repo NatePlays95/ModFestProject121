@@ -1,6 +1,6 @@
 package com.example.gastroarchaeology.block;
 
-import com.example.gastroarchaeology.item.ModItems;
+import com.example.gastroarchaeology.item.GastroarchaeologyItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
@@ -29,7 +29,7 @@ public class TomatoBlock extends CropBlock {
 
     @Override
     protected @NotNull ItemLike getBaseSeedId() {
-        return ModItems.TOMATO;
+        return GastroarchaeologyItems.TOMATO;
     }
 
     @Override
