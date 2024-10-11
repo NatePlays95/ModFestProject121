@@ -8,6 +8,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -30,6 +32,43 @@ public class ModBlocks {
 //                            .requiresCorrectToolForDrops()
 //            ));
 
+
+    public static final DeferredBlock<Block> CASSAVAS = registerBlock(
+            "cassavas",
+            () -> new CassavaBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.PLANT)
+                            .noCollission()
+                            .randomTicks()
+                            .instabreak()
+                            .sound(SoundType.CROP)
+                            .pushReaction(PushReaction.DESTROY)
+            )
+    );
+    public static final DeferredBlock<Block> TOMATOES = registerBlock(
+            "tomatoes",
+            () -> new TomatoBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.PLANT)
+                            .noCollission()
+                            .randomTicks()
+                            .instabreak()
+                            .sound(SoundType.CROP)
+                            .pushReaction(PushReaction.DESTROY)
+            )
+    );
+    public static final DeferredBlock<Block> PEPPERS = registerBlock(
+            "peppers",
+            () -> new PepperBlock(
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.PLANT)
+                            .noCollission()
+                            .randomTicks()
+                            .instabreak()
+                            .sound(SoundType.CROP)
+                            .pushReaction(PushReaction.DESTROY)
+            )
+    );
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

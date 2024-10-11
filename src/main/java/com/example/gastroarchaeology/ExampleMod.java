@@ -3,6 +3,7 @@ package com.example.gastroarchaeology;
 import com.example.gastroarchaeology.block.ModBlocks;
 import com.example.gastroarchaeology.item.ModItems;
 import com.example.gastroarchaeology.loot.modifiers.ModLootModifiers;
+import net.minecraft.core.Holder;
 import net.minecraft.world.item.*;
 import org.slf4j.Logger;
 
@@ -43,11 +44,6 @@ public class ExampleMod
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-
-
-
-
-
     //TODO: clean all this mess of example code after we learn it
 
 //    // Create a Deferred Register to hold Blocks which will all be registered under the "gastroarchaeology" namespace
@@ -78,8 +74,9 @@ public class ExampleMod
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> new ItemStack(Items.PUMPKIN_PIE))
             .displayItems((parameters, output) -> {
-                output.accept(new ItemStack(Items.PUMPKIN_PIE));
-//                output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(new ItemStack((ModItems.TOMATO.get())));
+                output.accept(new ItemStack((ModItems.CASSAVA.get())));
+                output.accept(new ItemStack((ModItems.PEPPER.get())));
             })
             .build());
 
