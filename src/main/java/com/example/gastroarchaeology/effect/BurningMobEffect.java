@@ -10,7 +10,7 @@ public class BurningMobEffect extends GatroAMobEffects.GastroAMobEffect {
     }
 
     public boolean applyEffectTick(@NotNull LivingEntity entity, int amplifier) {
-        if (true || entity.getHealth() > 1.0F) {
+        if (entity.getHealth() > 1.0F) {
             entity.hurt(entity.damageSources().onFire(), amplifier);
         }
 
