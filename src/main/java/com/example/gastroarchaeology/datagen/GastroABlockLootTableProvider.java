@@ -1,6 +1,7 @@
 package com.example.gastroarchaeology.datagen;
 
 import com.example.gastroarchaeology.block.GastroABlocks;
+import com.example.gastroarchaeology.item.GastroAItems;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -25,6 +26,11 @@ public class GastroABlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        //TODO: Change these to crop-like loot tables
+        dropOther(GastroABlocks.CASSAVAS.get(), GastroAItems.CASSAVA);
+        dropOther(GastroABlocks.TOMATOES.get(), GastroAItems.TOMATO);
+        dropOther(GastroABlocks.PEPPERS.get(), GastroAItems.PEPPER);
+
 //        HolderLookup.RegistryLookup<Enchantment> enchantmentRegistryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
 
 //        dropSelf(ModBlocks.MACHALITE_BLOCK.get());
