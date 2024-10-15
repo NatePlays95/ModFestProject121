@@ -8,6 +8,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -47,6 +48,25 @@ public class GastroAItems {
                                         .build())
             )
     );
+
+
+
+    public static final DeferredItem<Item> CURD_BUCKET = ITEMS.register(
+            "curd_bucket", () -> new Item(new Item.Properties()
+                    .craftRemainder(Items.BUCKET).stacksTo(1)
+            )
+    );
+    public static final DeferredItem<Item> CURD_MIXTURE = ITEMS.register(
+            "curd_mixture", () -> new Item(new Item.Properties())
+    );
+    public static final DeferredItem<Item> CHEESE = ITEMS.register(
+            "cheese", () -> new Item(new Item.Properties()
+                    .food(new FoodProperties.Builder().nutrition(1).saturationModifier(0.1f).build())
+            )
+    );
+
+    //cheese wheel, placeable, itemnameblockitem
+    //pizza, placeable, itemnameblockitem
 
 //    public static final DeferredItem<Item> EARTH_CRYSTAL = ITEMS.register("earth_crystal",
 //            () -> new Item(new Item.Properties()));

@@ -1,9 +1,11 @@
 package com.example.gastroarchaeology.datagen;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
+import com.example.gastroarchaeology.item.GastroAItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
@@ -18,6 +20,19 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
 
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAItems.CURD_MIXTURE)
+                .requires(GastroAItems.CURD_BUCKET)
+                .requires(Items.STONE) //TODO: replace with salt?
+                .unlockedBy("has_curd_bucket", has(GastroAItems.CURD_BUCKET))
+                .save(recipeOutput);
+
+        simpleCookingRecipe(
+                recipeOutput,
+                "smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new,
+                100, GastroAItems.CURD_MIXTURE, GastroAItems.CHEESE, 2
+        );
+
 //        List<ItemLike> MACHALITE_SMELTABLES = List.of(ModItems.MALACHITE_CHUNK, ModBlocks.MACHALITE_ORE);
 //
 //        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MACHALITE_BLOCK.get())

@@ -69,6 +69,10 @@ public class Gastroarchaeology
                 output.accept(new ItemStack((GastroAItems.TOMATO.get())));
                 output.accept(new ItemStack((GastroAItems.CASSAVA.get())));
                 output.accept(new ItemStack((GastroAItems.PEPPER.get())));
+                output.accept(new ItemStack((GastroAItems.CURD_BUCKET.get())));
+                output.accept(new ItemStack((GastroAItems.CURD_MIXTURE.get())));
+                output.accept(new ItemStack((GastroAItems.CHEESE.get())));
+
             })
             .build());
 
