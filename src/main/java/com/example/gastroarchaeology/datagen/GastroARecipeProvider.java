@@ -32,6 +32,21 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 "smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new,
                 100, GastroAItems.CURD_MIXTURE, GastroAItems.CHEESE, 2
         );
+        simpleCookingRecipe(
+                recipeOutput,
+                "smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new,
+                100, GastroAItems.CASSAVA, GastroAItems.BAKED_CASSAVA, 2
+        );
+        simpleCookingRecipe(
+                recipeOutput,
+                "smelting", RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new,
+                200, GastroAItems.CASSAVA, GastroAItems.BAKED_CASSAVA, 2
+        );
+        simpleCookingRecipe(
+                recipeOutput,
+                "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new,
+                400, GastroAItems.CASSAVA, GastroAItems.BAKED_CASSAVA, 0
+        );
 
 //        List<ItemLike> MACHALITE_SMELTABLES = List.of(ModItems.MALACHITE_CHUNK, ModBlocks.MACHALITE_ORE);
 //

@@ -68,6 +68,7 @@ public class Gastroarchaeology
             .displayItems((parameters, output) -> {
                 output.accept(new ItemStack((GastroAItems.TOMATO.get())));
                 output.accept(new ItemStack((GastroAItems.CASSAVA.get())));
+                output.accept(new ItemStack((GastroAItems.BAKED_CASSAVA.get())));
                 output.accept(new ItemStack((GastroAItems.PEPPER.get())));
                 output.accept(new ItemStack((GastroAItems.CURD_BUCKET.get())));
                 output.accept(new ItemStack((GastroAItems.CURD_MIXTURE.get())));
