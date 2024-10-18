@@ -66,8 +66,24 @@ public class GastroABlocks {
                             .instabreak()
                             .sound(SoundType.CROP)
                             .pushReaction(PushReaction.DESTROY)
+
             )
     );
+
+    //placeable foods
+    public static final DeferredBlock<PizzaBlock> PIZZA = registerBlock(
+            "pizza",
+            () -> new PizzaBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .sound(SoundType.WOOL)
+                    .pushReaction(PushReaction.DESTROY)
+                    .noOcclusion()
+                    .forceSolidOn()
+            )
+    );
+
+
+
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

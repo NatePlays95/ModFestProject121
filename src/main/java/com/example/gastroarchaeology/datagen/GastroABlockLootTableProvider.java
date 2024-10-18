@@ -8,6 +8,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
@@ -30,6 +31,8 @@ public class GastroABlockLootTableProvider extends BlockLootSubProvider {
         dropOther(GastroABlocks.CASSAVAS.get(), GastroAItems.CASSAVA);
         dropOther(GastroABlocks.TOMATOES.get(), GastroAItems.TOMATO);
         dropOther(GastroABlocks.PEPPERS.get(), GastroAItems.PEPPER);
+
+        add(GastroABlocks.PIZZA.get(), block -> createSingleItemTable(Items.AIR));
 
 //        HolderLookup.RegistryLookup<Enchantment> enchantmentRegistryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
 

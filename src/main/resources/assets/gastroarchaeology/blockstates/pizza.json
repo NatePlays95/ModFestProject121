@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "bites=0": {
+      "model": "gastroarchaeology:block/pizza_test_full"
+    },
+    "bites=1": {
+      "model": "gastroarchaeology:block/pizza_test_3"
+    },
+    "bites=2": {
+      "model": "gastroarchaeology:block/pizza_test_2"
+    },
+    "bites=3": {
+      "model": "gastroarchaeology:block/pizza_test_1"
+    }
+  }
+}

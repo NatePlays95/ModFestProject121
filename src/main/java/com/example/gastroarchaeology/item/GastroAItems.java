@@ -3,15 +3,21 @@ package com.example.gastroarchaeology.item;
 import com.example.gastroarchaeology.Gastroarchaeology;
 import com.example.gastroarchaeology.block.GastroABlocks;
 import com.example.gastroarchaeology.effect.GatroAMobEffects;
+import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.function.Supplier;
 
 public class GastroAItems {
 
@@ -122,6 +128,22 @@ public class GastroAItems {
     //cheese wheel, placeable, itemnameblockitem
     //pizza, placeable, itemnameblockitem
 
+    //TODO: There is no Pizza item, ModBlocks.PIZZA is an ItemLike.
+    // We make the item model in ModItemModelProvider or ModBlockStateProvider
+//    public static final DeferredItem<Item> PIZZA = ITEMS.register(
+//            "pizza", () -> new BlockItem(
+//                    GastroABlocks.PIZZA.get(),
+//                    new Item.Properties().stacksTo(2)
+//            )
+//    );
+//    public static final DeferredItem<Item> PIZZA = ITEMS.register(
+//            GastroABlocks.PIZZA.getId().getPath(), () -> new BlockItem(
+//                    GastroABlocks.PIZZA.get(),
+//                    new Item.Properties().stacksTo(2)
+//            )
+//    );
+    //Caused by: java.lang.IllegalArgumentException: Duplicate registration pizza
+
 //    public static final DeferredItem<Item> EARTH_CRYSTAL = ITEMS.register("earth_crystal",
 //            () -> new Item(new Item.Properties()));
 //    public static final DeferredItem<Item> MALACHITE_CHUNK = ITEMS.register("machalite_chunk",
@@ -138,7 +160,6 @@ public class GastroAItems {
 //            }
 //
 //    );
-
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

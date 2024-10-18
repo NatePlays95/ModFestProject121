@@ -33,7 +33,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public abstract class PlaceableFoodBlock extends Block {
 
-    public static final IntegerProperty BITES = BlockStateProperties.BITES;
+    public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 6);
 
     public PlaceableFoodBlock(Properties properties) {
         super(properties);
@@ -52,6 +52,8 @@ public abstract class PlaceableFoodBlock extends Block {
     public abstract int getBiteFullness();
 
     public abstract float getBiteSaturation();
+
+    public abstract net.minecraft.sounds.SoundEvent getEatSound();
 
     //Override this on children
 //    public VoxelShape getShapeByBite(BlockState state) {return Shapes.block();}
@@ -113,6 +115,7 @@ public abstract class PlaceableFoodBlock extends Block {
 //            player.awardStat(Stats.EAT_CAKE_SLICE);
             player.getFoodData().eat(this.getBiteFullness(), this.getBiteSaturation());
             int i = state.getValue(BITES);
+            level.playSound(player, pos, this.getEatSound(), SoundSource.PLAYERS, 1.0F, 1.0F);
             level.gameEvent(player, GameEvent.EAT, pos);
             if (i < this.getMaxBites()) {
                 level.setBlock(pos, state.setValue(BITES, Integer.valueOf(i + 1)), 3);

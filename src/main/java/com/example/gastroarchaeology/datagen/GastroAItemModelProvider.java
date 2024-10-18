@@ -1,6 +1,8 @@
 package com.example.gastroarchaeology.datagen;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
+import com.example.gastroarchaeology.block.GastroABlocks;
+import com.example.gastroarchaeology.item.GastroAItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -16,6 +18,12 @@ public class GastroAItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        //To make a block look like an item in the inventory
+        basicItem(GastroABlocks.PIZZA.asItem());
+
+
+
+
 //        basicItem(ModItems.EARTH_CRYSTAL.get());
 //        basicItem(ModItems.MALACHITE_CHUNK.get());
 //        basicItem(ModItems.MALACHITE_INGOT.get());
@@ -31,6 +39,8 @@ public class GastroAItemModelProvider extends ItemModelProvider {
 //        handheldItem(ModItems.MACHALITE_SWORD);
 //
 //        withExistingParent(ModItems.MOSSWINE_SPAWN_EGG.getRegisteredName(), mcLoc("item/template_spawn_egg"));
+
+
     }
 
 

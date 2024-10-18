@@ -1,7 +1,16 @@
 package com.example.gastroarchaeology.datagen;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
+import com.example.gastroarchaeology.block.GastroABlocks;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.data.models.blockstates.PropertyDispatch;
+import net.minecraft.data.models.blockstates.Variant;
+import net.minecraft.data.models.blockstates.VariantProperties;
+import net.minecraft.data.models.model.ModelLocationUtils;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -14,6 +23,12 @@ public class GastroABlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        //Make a block that looks like itself in the inventory
+//        blockItem(GastroABlocks.PIZZA);
+        //or manually:
+//        simpleBlockItem(GastroABlocks.PIZZA.get(), new ModelFile.UncheckedModelFile(Gastroarchaeology.MOD_ID + ":block/pizza_test_full"));
+
+
 //        blockWithItem(ModBlocks.EARTH_CRYSTAL_ORE);
 //        blockWithItem(ModBlocks.MACHALITE_ORE);
 //        blockWithItem(ModBlocks.MACHALITE_BLOCK);
@@ -39,7 +54,6 @@ public class GastroABlockStateProvider extends BlockStateProvider {
 //        blockItem(ModBlocks.MACHALITE_FENCE_GATE);
 //        blockItem(ModBlocks.MACHALITE_TRAPDOOR, "_bottom");
 //        blockItem(ModBlocks.MACHALITE_DOOR);
-
     }
 
     private void blockWithItem(DeferredBlock<?> deferredBlock) {
@@ -53,4 +67,22 @@ public class GastroABlockStateProvider extends BlockStateProvider {
     private void blockItem(DeferredBlock<?> deferredBlock, String appendix) {
         simpleBlockItem(deferredBlock.get(), new ModelFile.UncheckedModelFile(Gastroarchaeology.MOD_ID + ":block/" + deferredBlock.getId().getPath() + appendix));
     }
+
+//    private void createCakeBlock() {
+//        this.createSimpleFlatItemModel(Items.CAKE);
+//        this.blockStateOutput
+//                .accept(
+//                        MultiVariantGenerator.multiVariant(Blocks.CAKE)
+//                                .with(
+//                                        PropertyDispatch.property(BlockStateProperties.BITES)
+//                                                .select(0, Variant.variant().with(VariantProperties.MODEL, ModelLocationUtils.getModelLocation(Blocks.CAKE)))
+//                                                .select(1, Variant.variant().with(VariantProperties.MODEL, ModelLocationUtils.getModelLocation(Blocks.CAKE, "_slice1")))
+//                                                .select(2, Variant.variant().with(VariantProperties.MODEL, ModelLocationUtils.getModelLocation(Blocks.CAKE, "_slice2")))
+//                                                .select(3, Variant.variant().with(VariantProperties.MODEL, ModelLocationUtils.getModelLocation(Blocks.CAKE, "_slice3")))
+//                                                .select(4, Variant.variant().with(VariantProperties.MODEL, ModelLocationUtils.getModelLocation(Blocks.CAKE, "_slice4")))
+//                                                .select(5, Variant.variant().with(VariantProperties.MODEL, ModelLocationUtils.getModelLocation(Blocks.CAKE, "_slice5")))
+//                                                .select(6, Variant.variant().with(VariantProperties.MODEL, ModelLocationUtils.getModelLocation(Blocks.CAKE, "_slice6")))
+//                                )
+//                );
+//    }
 }
