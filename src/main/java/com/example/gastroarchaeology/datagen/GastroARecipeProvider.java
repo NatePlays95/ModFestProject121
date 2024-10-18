@@ -54,6 +54,15 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .unlockedBy("has_yogurt_recipe", has(GastroAItems.YOGURT_RECIPE))
                 .save(recipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAItems.CHORUS_FRUIT_YOGURT, 3)
+                .requires(GastroAItems.YOGURT_RECIPE)
+                .requires(GastroAItems.CURD_BUCKET)
+                .requires(Items.CHORUS_FRUIT)
+                .requires(Items.SUGAR)
+                .requires(Items.GLASS_BOTTLE, 3)
+                .unlockedBy("has_yogurt_recipe", has(GastroAItems.YOGURT_RECIPE))
+                .save(recipeOutput);
+
         simpleCookingRecipe(
                 recipeOutput,
                 "smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new,

@@ -109,6 +109,15 @@ public class GastroAItems {
                             .build())
             )
     );
+    public static final DeferredItem<Item> CHORUS_FRUIT_YOGURT = ITEMS.register(
+            "chorus_fruit_yogurt", () -> new Item(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(6)
+                            .saturationModifier(0.4f)
+                            .usingConvertsTo(Items.GLASS_BOTTLE)
+                            .build())
+            )
+    );
 
     // Intermediaries
     public static final DeferredItem<Item> CURD_MIXTURE = ITEMS.register(

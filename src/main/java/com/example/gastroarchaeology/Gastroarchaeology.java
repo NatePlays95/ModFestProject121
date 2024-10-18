@@ -77,6 +77,7 @@ public class Gastroarchaeology
                 output.accept(new ItemStack((GastroAItems.SWEET_BERRY_YOGURT.get())));
                 output.accept(new ItemStack((GastroAItems.GLOW_BERRY_YOGURT.get())));
                 output.accept(new ItemStack((GastroAItems.HONEY_CARROT_YOGURT.get())));
+                output.accept(new ItemStack((GastroAItems.CHORUS_FRUIT_YOGURT.get())));
             })
             .build());
 
