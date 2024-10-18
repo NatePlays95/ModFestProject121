@@ -61,22 +61,61 @@ public class GastroAItems {
                     new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(1)
                             .saturationModifier(0.1f)
-                            .build()
-                    )
+                            .build())
             )
     );
-
-    // Intermediaries
     public static final DeferredItem<Item> CURD_BUCKET = ITEMS.register(
             "curd_bucket", () -> new Item(
                 new Item.Properties()
                         .craftRemainder(Items.BUCKET)
                         .stacksTo(1)
+                        .food(new FoodProperties.Builder()
+                                .nutrition(2)
+                                .saturationModifier(0.2f)
+                                .usingConvertsTo(Items.BUCKET)
+                                .build())
             )
     );
+    public static final DeferredItem<Item> SWEET_BERRY_YOGURT = ITEMS.register(
+            "sweet_berry_yogurt", () -> new Item(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .usingConvertsTo(Items.GLASS_BOTTLE)
+                            .build())
+            )
+    );
+    public static final DeferredItem<Item> GLOW_BERRY_YOGURT = ITEMS.register(
+            "glow_berry_yogurt", () -> new Item(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.3f)
+                            .usingConvertsTo(Items.GLASS_BOTTLE)
+                            .build())
+            )
+    );
+    public static final DeferredItem<Item> HONEY_CARROT_YOGURT = ITEMS.register(
+            "honey_carrot_yogurt", () -> new Item(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(7)
+                            .saturationModifier(0.7f)
+                            .usingConvertsTo(Items.GLASS_BOTTLE)
+                            .build())
+            )
+    );
+
+    // Intermediaries
     public static final DeferredItem<Item> CURD_MIXTURE = ITEMS.register(
             "curd_mixture", () -> new Item(
-                new Item.Properties()
+                    new Item.Properties()
+            )
+    );
+
+    // Recipes
+    public static final DeferredItem<Item> YOGURT_RECIPE = ITEMS.register(
+            "yogurt_recipe", () -> new Item(
+                    new Item.Properties()
+                    //      .craftRemainder(GastroAItems.YOGURT_RECIPE.get())
             )
     );
 

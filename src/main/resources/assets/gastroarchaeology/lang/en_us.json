@@ -5,5 +5,9 @@
   "block.gastroarchaeology.peppers": "Peppers",
   "item.gastroarchaeology.tomato": "Tomato",
   "item.gastroarchaeology.cassava": "Cassava",
-  "item.gastroarchaeology.pepper": "Pepper"
+  "item.gastroarchaeology.baked_cassava": "Baked Cassava",
+  "item.gastroarchaeology.pepper": "Pepper",
+  "item.gastroarchaeology.cheese": "Cheese",
+  "item.gastroarchaeology.curd_bucket": "Curd Bucket",
+  "item.gastroarchaeology.curd_mixture": "Curd Mixture"
 }
