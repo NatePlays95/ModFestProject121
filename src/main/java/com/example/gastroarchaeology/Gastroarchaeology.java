@@ -31,38 +31,12 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 @Mod(Gastroarchaeology.MOD_ID)
 public class Gastroarchaeology
 {
-    // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "gastroarchaeology";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    //TODO: clean all this mess of example code after we learn it
-
-//    // Create a Deferred Register to hold Blocks which will all be registered under the "gastroarchaeology" namespace
-//    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MOD_ID);
-//    // Create a Deferred Register to hold Items which will all be registered under the "gastroarchaeology" namespace
-//    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MOD_ID);
-//
-//    // Creates a new Block with the id "gastroarchaeology:example_block", combining the namespace and path
-//    public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-//    // Creates a new BlockItem with the id "gastroarchaeology:example_block", combining the namespace and path
-//    public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
-//
-//    // Creates a new food item with the id "gastroarchaeology:example_id", nutrition 1 and saturation 2
-//    public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder()
-//            .alwaysEdible().nutrition(1).saturationModifier(2f).build()));
-
-
-
-
-
-    // Creative tab here is fine, we don't need more than one
-
-    //Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "gastroarchaeology" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
-    // Creates a creative tab with the id "gastroarchaeology:example_tab" for the example item, that is placed after the combat tab
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> GASTROARCHEOLOGY_TAB = CREATIVE_MODE_TABS.register("gastroarchaeology_tab", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.gastroarchaeology")) //The language key for the title of your CreativeModeTab
+            .title(Component.translatable("itemGroup.gastroarchaeology"))
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> new ItemStack(GastroAItems.PEPPER.get()))
             .displayItems((parameters, output) -> {
