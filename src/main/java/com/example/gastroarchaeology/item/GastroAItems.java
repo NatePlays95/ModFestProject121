@@ -4,6 +4,9 @@ import com.example.gastroarchaeology.Gastroarchaeology;
 import com.example.gastroarchaeology.block.GastroABlocks;
 import com.example.gastroarchaeology.effect.GatroAMobEffects;
 import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -71,7 +74,7 @@ public class GastroAItems {
             )
     );
     public static final DeferredItem<Item> CURD_BUCKET = ITEMS.register(
-            "curd_bucket", () -> new Item(
+            "curd_bucket", () -> new DrinkableItem(
                 new Item.Properties()
                         .craftRemainder(Items.BUCKET)
                         .stacksTo(1)
@@ -83,7 +86,7 @@ public class GastroAItems {
             )
     );
     public static final DeferredItem<Item> SWEET_BERRY_YOGURT = ITEMS.register(
-            "sweet_berry_yogurt", () -> new Item(
+            "sweet_berry_yogurt", () -> new DrinkableItem(
                     new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(4)
                             .saturationModifier(0.3f)
@@ -92,7 +95,7 @@ public class GastroAItems {
             )
     );
     public static final DeferredItem<Item> GLOW_BERRY_YOGURT = ITEMS.register(
-            "glow_berry_yogurt", () -> new Item(
+            "glow_berry_yogurt", () -> new DrinkableItem(
                     new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(4)
                             .saturationModifier(0.3f)
@@ -101,7 +104,7 @@ public class GastroAItems {
             )
     );
     public static final DeferredItem<Item> HONEY_CARROT_YOGURT = ITEMS.register(
-            "honey_carrot_yogurt", () -> new Item(
+            "honey_carrot_yogurt", () -> new DrinkableItem(
                     new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(7)
                             .saturationModifier(0.7f)
@@ -110,7 +113,7 @@ public class GastroAItems {
             )
     );
     public static final DeferredItem<Item> CHORUS_FRUIT_YOGURT = ITEMS.register(
-            "chorus_fruit_yogurt", () -> new Item(
+            "chorus_fruit_yogurt", () -> new DrinkableItem(
                     new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(6)
                             .saturationModifier(0.4f)
