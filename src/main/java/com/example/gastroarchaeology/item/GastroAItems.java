@@ -131,9 +131,7 @@ public class GastroAItems {
 
     // Recipes
     public static final DeferredItem<Item> YOGURT_RECIPE = ITEMS.register(
-            "yogurt_recipe", () -> new Item(
-                    new Item.Properties()
-                    //      .craftRemainder(GastroAItems.YOGURT_RECIPE.get())
+            "yogurt_recipe", () -> new RecipeItem(
             )
     );
     //cheese wheel, placeable, itemnameblockitem
