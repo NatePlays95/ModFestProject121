@@ -133,25 +133,8 @@ public class GastroAItems {
                     //      .craftRemainder(GastroAItems.YOGURT_RECIPE.get())
             )
     );
-
     //cheese wheel, placeable, itemnameblockitem
     //pizza, placeable, itemnameblockitem
-
-    //TODO: There is no Pizza item, ModBlocks.PIZZA is an ItemLike.
-    // We make the item model in ModItemModelProvider or ModBlockStateProvider
-//    public static final DeferredItem<Item> PIZZA = ITEMS.register(
-//            "pizza", () -> new BlockItem(
-//                    GastroABlocks.PIZZA.get(),
-//                    new Item.Properties().stacksTo(2)
-//            )
-//    );
-//    public static final DeferredItem<Item> PIZZA = ITEMS.register(
-//            GastroABlocks.PIZZA.getId().getPath(), () -> new BlockItem(
-//                    GastroABlocks.PIZZA.get(),
-//                    new Item.Properties().stacksTo(2)
-//            )
-//    );
-    //Caused by: java.lang.IllegalArgumentException: Duplicate registration pizza
 
 //    public static final DeferredItem<Item> EARTH_CRYSTAL = ITEMS.register("earth_crystal",
 //            () -> new Item(new Item.Properties()));

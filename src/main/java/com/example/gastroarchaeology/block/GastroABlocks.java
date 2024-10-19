@@ -31,7 +31,7 @@ public class GastroABlocks {
 //                            .requiresCorrectToolForDrops()
 //            ));
 
-
+    // Crops
     public static final DeferredBlock<Block> CASSAVAS = registerBlock(
             "cassavas",
             () -> new CassavaBlock(
@@ -42,7 +42,8 @@ public class GastroABlocks {
                             .instabreak()
                             .sound(SoundType.CROP)
                             .pushReaction(PushReaction.DESTROY)
-            )
+            ),
+            null
     );
     public static final DeferredBlock<Block> TOMATOES = registerBlock(
             "tomatoes",
@@ -54,7 +55,8 @@ public class GastroABlocks {
                             .instabreak()
                             .sound(SoundType.CROP)
                             .pushReaction(PushReaction.DESTROY)
-            )
+            ),
+            null
     );
     public static final DeferredBlock<Block> PEPPERS = registerBlock(
             "peppers",
@@ -67,11 +69,12 @@ public class GastroABlocks {
                             .sound(SoundType.CROP)
                             .pushReaction(PushReaction.DESTROY)
 
-            )
+            ),
+            null
     );
 
-    //placeable foods
-    public static final DeferredBlock<PizzaBlock> PIZZA = registerBlock(
+    // Placeable foods
+    public static final DeferredBlock<Block> PIZZA = registerBlock(
             "pizza",
             () -> new PizzaBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_YELLOW)
@@ -79,7 +82,9 @@ public class GastroABlocks {
                     .pushReaction(PushReaction.DESTROY)
                     .noOcclusion()
                     .forceSolidOn()
-            )
+            ),
+            new Item.Properties()
+                    .stacksTo(1)
     );
 
 
@@ -90,9 +95,19 @@ public class GastroABlocks {
         registerBlockItem(name, toReturn);
         return toReturn;
     }
+    private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block, Item.Properties itemProperties) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        if (itemProperties != null) {
+            registerBlockItem(name, toReturn, itemProperties);
+        }
+        return toReturn;
+    }
 
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
         GastroAItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+    }
+    private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block, Item.Properties itemProperties) {
+        GastroAItems.ITEMS.register(name, () -> new BlockItem(block.get(), itemProperties));
     }
 
     public static void register(IEventBus eventBus) {

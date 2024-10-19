@@ -3,11 +3,17 @@
   "block.gastroarchaeology.tomatoes": "Tomatoes",
   "block.gastroarchaeology.cassavas": "Cassavas",
   "block.gastroarchaeology.peppers": "Peppers",
+  "block.gastroarchaeology.pizza": "Pizza",
   "item.gastroarchaeology.tomato": "Tomato",
   "item.gastroarchaeology.cassava": "Cassava",
   "item.gastroarchaeology.baked_cassava": "Baked Cassava",
   "item.gastroarchaeology.pepper": "Pepper",
   "item.gastroarchaeology.cheese": "Cheese",
   "item.gastroarchaeology.curd_bucket": "Curd Bucket",
-  "item.gastroarchaeology.curd_mixture": "Curd Mixture"
+  "item.gastroarchaeology.curd_mixture": "Curd Mixture",
+  "item.gastroarchaeology.yogurt_recipe": "Yogurt Recipe",
+  "item.gastroarchaeology.sweet_berry_yogurt": "Sweet Berry Yogurt",
+  "item.gastroarchaeology.glow_berry_yogurt": "Glow Berry Yogurt",
+  "item.gastroarchaeology.honey_carrot_yogurt": "Honey Carrot Yogurt",
+  "item.gastroarchaeology.chorus_fruit_yogurt": "Chorus Fruit Yogurt"
 }

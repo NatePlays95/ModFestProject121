@@ -61,7 +61,7 @@ public class Gastroarchaeology
     //Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "gastroarchaeology" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
     // Creates a creative tab with the id "gastroarchaeology:example_tab" for the example item, that is placed after the combat tab
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> GASTROARCHEOLOGY_TAB = CREATIVE_MODE_TABS.register("gastroarchaeology_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.gastroarchaeology")) //The language key for the title of your CreativeModeTab
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> new ItemStack(GastroAItems.PEPPER.get()))
@@ -73,6 +73,7 @@ public class Gastroarchaeology
                 output.accept(new ItemStack((GastroAItems.CURD_BUCKET.get())));
                 output.accept(new ItemStack((GastroAItems.CURD_MIXTURE.get())));
                 output.accept(new ItemStack((GastroAItems.CHEESE.get())));
+                output.accept(new ItemStack((GastroABlocks.PIZZA.get())));
                 output.accept(new ItemStack((GastroAItems.YOGURT_RECIPE.get())));
                 output.accept(new ItemStack((GastroAItems.SWEET_BERRY_YOGURT.get())));
                 output.accept(new ItemStack((GastroAItems.GLOW_BERRY_YOGURT.get())));
