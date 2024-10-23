@@ -92,6 +92,20 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .unlockedBy("has_crushed_cassava", has(GastroAItems.CRUSHED_CASSAVA))
                 .save(recipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroABlocks.SPICY_CHIPS)
+                .requires(GastroAItems.PEPPER)
+                .requires(Items.BAKED_POTATO)
+                .requires(Items.BOWL)
+                .unlockedBy("has_pepper", has(GastroAItems.PEPPER))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroABlocks.EXTRA_SPICY_CHIPS)
+                .requires(GastroAItems.PEPPER,7)
+                .requires(Items.BAKED_POTATO)
+                .requires(Items.BOWL)
+                .unlockedBy("has_pepper", has(GastroAItems.PEPPER))
+                .save(recipeOutput);
+
         simpleCookingRecipe(
                 recipeOutput,
                 "smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new,

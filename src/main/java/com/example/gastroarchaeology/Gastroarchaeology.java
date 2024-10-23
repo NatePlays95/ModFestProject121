@@ -50,6 +50,8 @@ public class Gastroarchaeology
                 output.accept(new ItemStack((GastroAItems.CURD_BUCKET.get())));
                 output.accept(new ItemStack((GastroAItems.CURD_MIXTURE.get())));
                 output.accept(new ItemStack((GastroAItems.CHEESE.get())));
+                output.accept(new ItemStack((GastroABlocks.SPICY_CHIPS.get())));
+                output.accept(new ItemStack((GastroABlocks.EXTRA_SPICY_CHIPS.get())));
                 output.accept(new ItemStack((GastroAItems.TAPIOCA_RECIPE.get())));
                 output.accept(new ItemStack((GastroAItems.TAPIOCA_BEEF_WRAP.get())));
                 output.accept(new ItemStack((GastroAItems.TAPIOCA_CHEESE_WRAP.get())));

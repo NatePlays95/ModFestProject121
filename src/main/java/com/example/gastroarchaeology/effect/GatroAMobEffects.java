@@ -14,7 +14,7 @@ public class GatroAMobEffects {
     public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, Gastroarchaeology.MOD_ID);
 
     public static final DeferredHolder<MobEffect, MobEffect> BURNING = EFFECTS.register(
-            "burning", () -> new BurningMobEffect(MobEffectCategory.HARMFUL, 0xFF0000)
+            "burning", () -> new BurningMobEffect(MobEffectCategory.HARMFUL, 0xC11B17)
     );
 
     public static void register(IEventBus eventBus) {

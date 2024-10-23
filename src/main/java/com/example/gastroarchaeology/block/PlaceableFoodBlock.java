@@ -33,7 +33,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public abstract class PlaceableFoodBlock extends Block {
 
-    public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 6);
+    public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 9);
 
     public PlaceableFoodBlock(Properties properties) {
         super(properties);

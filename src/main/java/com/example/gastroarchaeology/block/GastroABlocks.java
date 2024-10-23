@@ -86,6 +86,30 @@ public class GastroABlocks {
             new Item.Properties()
                     .stacksTo(1)
     );
+    public static final DeferredBlock<Block> SPICY_CHIPS = registerBlock(
+            "spicy_chips",
+            () -> new SpicyChipsBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .sound(SoundType.WOOL)
+                    .pushReaction(PushReaction.DESTROY)
+                    .noOcclusion()
+                    .forceSolidOn()
+            ),
+            new Item.Properties()
+                    .stacksTo(1)
+    );
+    public static final DeferredBlock<Block> EXTRA_SPICY_CHIPS = registerBlock(
+            "extra_spicy_chips",
+            () -> new SpicyChipsBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .sound(SoundType.WOOL)
+                    .pushReaction(PushReaction.DESTROY)
+                    .noOcclusion()
+                    .forceSolidOn()
+            ),
+            new Item.Properties()
+                    .stacksTo(1)
+    );
 
 
 
