@@ -41,17 +41,117 @@ public class GastroAGlobalLootModifierProvider extends GlobalLootModifierProvide
 //                List.of(new ModLoadedCondition(ExampleMod.MOD_ID))
 //        );
 
+        //crops
+
         add(
-                "desert_well_modifier",
+                "desert_well_tomato_modifier",
                 new GastroARandomOverrideLootModifier(
                     new LootItemCondition[] {
                             LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/desert_well")).build()
                     },
-                    0.5f,
-                    GastroAItems.PEPPER.get(),
-                    1, 3
+                    0.1f,
+                    GastroAItems.TOMATO.get(),
+                    1, 1
                 ),
                 List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID))
         );
+
+        add(
+                "desert_pyramid_tomato_modifier",
+                new GastroARandomOverrideLootModifier(
+                        new LootItemCondition[] {
+                                LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/desert_pyramid")).build()
+                        },
+                        0.05f,
+                        GastroAItems.TOMATO.get(),
+                        1, 1
+                ),
+                List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID))
+        );
+
+        add(
+                "trailruins_common_cassava_modifier",
+                new GastroARandomOverrideLootModifier(
+                        new LootItemCondition[] {
+                                LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/trail_ruins_common")).build()
+                        },
+                        0.05f,
+                        GastroAItems.CASSAVA.get(),
+                        1, 1
+                ),
+                List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID))
+        );
+
+        add(
+                "oceanruins_warm_cassava_modifier",
+                new GastroARandomOverrideLootModifier(
+                        new LootItemCondition[] {
+                                LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/ocean_ruin_warm")).build()
+                        },
+                        0.05f,
+                        GastroAItems.CASSAVA.get(),
+                        1, 1
+                ),
+                List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID))
+        );
+
+        add(
+                "sniffer_dig_pepper_modifier",
+                new GastroARandomOverrideLootModifier(
+                        new LootItemCondition[] {
+                                LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("gameplay/sniffer_digging")).build()
+                        },
+                        0.2f,
+                        GastroAItems.PEPPER.get(),
+                        1, 1
+                ),
+                List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID))
+        );
+
+
+
+        //recipes
+
+
+
+        add(
+                "oceanruins_cold_recipe_modifier",
+                new GastroARandomOverrideLootModifier(
+                        new LootItemCondition[] {
+                                LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/ocean_ruin_warm")).build()
+                        },
+                        0.03f,
+                        GastroAItems.YOGURT_RECIPE.get(),
+                        1, 1
+                ),
+                List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID))
+        );
+
+        add(
+                "desert_pyramid_recipe_modifier",
+                new GastroARandomOverrideLootModifier(
+                        new LootItemCondition[] {
+                                LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/desert_pyramid")).build()
+                        },
+                        0.03f,
+                        GastroAItems.PIZZA_RECIPE.get(),
+                        1, 1
+                ),
+                List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID))
+        );
+
+        add(
+                "trailruins_rare_recipe_modifier",
+                new GastroARandomOverrideLootModifier(
+                        new LootItemCondition[] {
+                                LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/trail_ruins_rare")).build()
+                        },
+                        0.03f,
+                        GastroAItems.TAPIOCA_RECIPE.get(),
+                        1, 1
+                ),
+                List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID))
+        );
+
     }
 }
