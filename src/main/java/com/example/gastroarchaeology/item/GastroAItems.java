@@ -131,9 +131,17 @@ public class GastroAItems {
 
     // Recipes
     public static final DeferredItem<Item> YOGURT_RECIPE = ITEMS.register(
-            "yogurt_recipe", () -> new RecipeItem(
-            )
+            "yogurt_recipe", RecipeItem::new
     );
+
+    public static final DeferredItem<Item> PIZZA_RECIPE = ITEMS.register(
+            "pizza_recipe", RecipeItem::new
+    );
+
+    public static final DeferredItem<Item> TAPIOCA_RECIPE = ITEMS.register(
+            "tapioca_recipe", RecipeItem::new
+    );
+
     //cheese wheel, placeable, itemnameblockitem
     //pizza, placeable, itemnameblockitem
 
