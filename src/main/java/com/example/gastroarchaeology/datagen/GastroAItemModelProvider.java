@@ -18,10 +18,31 @@ public class GastroAItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        //To make a block look like an item in the inventory
+        basicItem(GastroAItems.CASSAVA.get());
+        basicItem(GastroAItems.BAKED_CASSAVA.get());
+        basicItem(GastroAItems.CRUSHED_CASSAVA.get());
+        basicItem(GastroAItems.CASSAVA_DOUGH.get());
+        basicItem(GastroAItems.TAPIOCA_DOUGH.get());
+        basicItem(GastroAItems.PEPPER.get());
+        basicItem(GastroAItems.TOMATO.get());
+        basicItem(GastroAItems.CURD_BUCKET.get());
+        basicItem(GastroAItems.CURD_MIXTURE.get());
+        basicItem(GastroAItems.CHEESE.get());
+        basicItem(GastroABlocks.SPICY_CHIPS.asItem());
+        basicItem(GastroABlocks.EXTRA_SPICY_CHIPS.asItem());
+        basicItem(GastroAItems.TAPIOCA_BEEF_WRAP.get());
+        basicItem(GastroAItems.TAPIOCA_CHEESE_WRAP.get());
+        basicItem(GastroAItems.TAPIOCA_HAM_AND_CHEESE_WRAP.get());
+        basicItem(GastroAItems.SWEET_BERRY_YOGURT.get());
+        basicItem(GastroAItems.GLOW_BERRY_YOGURT.get());
+        basicItem(GastroAItems.HONEY_CARROT_YOGURT.get());
+        basicItem(GastroAItems.CHORUS_FRUIT_YOGURT.get());
         basicItem(GastroABlocks.PIZZA.asItem());
 
 
+//        basicItem(GastroAItems.TAPIOCA_RECIPE.get());
+//        basicItem(GastroAItems.YOGURT_RECIPE.get());
+//        basicItem(GastroAItems.PIZZA_RECIPE.get());
 
 
 //        basicItem(ModItems.EARTH_CRYSTAL.get());
