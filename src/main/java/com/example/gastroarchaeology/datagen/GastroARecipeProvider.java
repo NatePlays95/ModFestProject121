@@ -106,6 +106,16 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .unlockedBy("has_pepper", has(GastroAItems.PEPPER))
                 .save(recipeOutput);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, GastroABlocks.PIZZA)
+                .define('S', GastroAItems.TOMATO)
+                .define('R', GastroAItems.PIZZA_RECIPE)
+                .define('C', GastroAItems.CHEESE)
+                .define('D', Items.WHEAT)
+                .pattern("SRC")
+                .pattern("DDD")
+                .unlockedBy("has_pizza_recipe", has(GastroAItems.PIZZA_RECIPE))
+                .save(recipeOutput);
+
         simpleCookingRecipe(
                 recipeOutput,
                 "smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new,
