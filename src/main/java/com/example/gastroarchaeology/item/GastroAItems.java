@@ -121,11 +121,51 @@ public class GastroAItems {
                             .build())
             )
     );
+    public static final DeferredItem<Item> TAPIOCA_CHEESE_WRAP = ITEMS.register(
+            "tapioca_cheese_wrap", () -> new Item(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(2)
+                            .saturationModifier(0.3f)
+                            .build())
+            )
+    );
+    public static final DeferredItem<Item> TAPIOCA_BEEF_WRAP = ITEMS.register(
+            "tapioca_beef_wrap", () -> new Item(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.5f)
+                            .build())
+            )
+    );
+    public static final DeferredItem<Item> TAPIOCA_HAM_AND_CHEESE_WRAP = ITEMS.register(
+            "tapioca_ham_and_cheese_wrap", () -> new Item(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(5)
+                            .saturationModifier(0.6f)
+                            .build())
+            )
+    );
 
     // Intermediaries
     public static final DeferredItem<Item> CURD_MIXTURE = ITEMS.register(
             "curd_mixture", () -> new Item(
                     new Item.Properties()
+            )
+    );
+    public static final DeferredItem<Item> CASSAVA_DOUGH = ITEMS.register(
+            "cassava_dough", () -> new Item(
+                    new Item.Properties()
+            )
+    );
+    public static final DeferredItem<Item> TAPIOCA_DOUGH = ITEMS.register(
+            "tapioca_dough", () -> new Item(
+                    new Item.Properties()
+            )
+    );
+    public static final DeferredItem<Item> CRUSHED_CASSAVA = ITEMS.register(
+            "crushed_cassava", () -> new Item(
+                    new Item.Properties()
+                            .craftRemainder(GastroAItems.TAPIOCA_DOUGH.get())
             )
     );
 

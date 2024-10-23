@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "gastroarchaeology:item/tapioca_ham_and_cheese_wrap"
+	}
+}

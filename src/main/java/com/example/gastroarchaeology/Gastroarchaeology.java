@@ -40,19 +40,27 @@ public class Gastroarchaeology
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> new ItemStack(GastroAItems.PEPPER.get()))
             .displayItems((parameters, output) -> {
-                output.accept(new ItemStack((GastroAItems.TOMATO.get())));
                 output.accept(new ItemStack((GastroAItems.CASSAVA.get())));
                 output.accept(new ItemStack((GastroAItems.BAKED_CASSAVA.get())));
+                output.accept(new ItemStack((GastroAItems.CRUSHED_CASSAVA.get())));
+                output.accept(new ItemStack((GastroAItems.CASSAVA_DOUGH.get())));
+                output.accept(new ItemStack((GastroAItems.TAPIOCA_DOUGH.get())));
                 output.accept(new ItemStack((GastroAItems.PEPPER.get())));
+                output.accept(new ItemStack((GastroAItems.TOMATO.get())));
                 output.accept(new ItemStack((GastroAItems.CURD_BUCKET.get())));
                 output.accept(new ItemStack((GastroAItems.CURD_MIXTURE.get())));
                 output.accept(new ItemStack((GastroAItems.CHEESE.get())));
-                output.accept(new ItemStack((GastroABlocks.PIZZA.get())));
+                output.accept(new ItemStack((GastroAItems.TAPIOCA_RECIPE.get())));
+                output.accept(new ItemStack((GastroAItems.TAPIOCA_BEEF_WRAP.get())));
+                output.accept(new ItemStack((GastroAItems.TAPIOCA_CHEESE_WRAP.get())));
+                output.accept(new ItemStack((GastroAItems.TAPIOCA_HAM_AND_CHEESE_WRAP.get())));
                 output.accept(new ItemStack((GastroAItems.YOGURT_RECIPE.get())));
                 output.accept(new ItemStack((GastroAItems.SWEET_BERRY_YOGURT.get())));
                 output.accept(new ItemStack((GastroAItems.GLOW_BERRY_YOGURT.get())));
                 output.accept(new ItemStack((GastroAItems.HONEY_CARROT_YOGURT.get())));
                 output.accept(new ItemStack((GastroAItems.CHORUS_FRUIT_YOGURT.get())));
+                output.accept(new ItemStack((GastroAItems.PIZZA_RECIPE.get())));
+                output.accept(new ItemStack((GastroABlocks.PIZZA.get())));
             })
             .build());
 

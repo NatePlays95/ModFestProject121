@@ -1,6 +1,7 @@
 package com.example.gastroarchaeology.datagen;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
+import com.example.gastroarchaeology.block.GastroABlocks;
 import com.example.gastroarchaeology.item.GastroAItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -63,6 +64,34 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .unlockedBy("has_yogurt_recipe", has(GastroAItems.YOGURT_RECIPE))
                 .save(recipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAItems.TAPIOCA_BEEF_WRAP)
+                .requires(GastroAItems.TAPIOCA_RECIPE)
+                .requires(GastroAItems.TAPIOCA_DOUGH)
+                .requires(Items.BEEF)
+                .unlockedBy("has_tapioca_recipe", has(GastroAItems.TAPIOCA_RECIPE))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAItems.TAPIOCA_CHEESE_WRAP)
+                .requires(GastroAItems.TAPIOCA_RECIPE)
+                .requires(GastroAItems.TAPIOCA_DOUGH)
+                .requires(GastroAItems.CHEESE)
+                .unlockedBy("has_tapioca_recipe", has(GastroAItems.TAPIOCA_RECIPE))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAItems.TAPIOCA_HAM_AND_CHEESE_WRAP)
+                .requires(GastroAItems.TAPIOCA_RECIPE)
+                .requires(GastroAItems.TAPIOCA_DOUGH)
+                .requires(GastroAItems.CHEESE)
+                .requires(Items.COOKED_PORKCHOP)
+                .unlockedBy("has_tapioca_recipe", has(GastroAItems.TAPIOCA_RECIPE))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GastroAItems.TAPIOCA_DOUGH, 8)
+                .requires(GastroAItems.CRUSHED_CASSAVA, 8)
+                .requires(Items.WATER_BUCKET)
+                .unlockedBy("has_crushed_cassava", has(GastroAItems.CRUSHED_CASSAVA))
+                .save(recipeOutput);
+
         simpleCookingRecipe(
                 recipeOutput,
                 "smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new,
@@ -83,6 +112,19 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new,
                 400, GastroAItems.CASSAVA, GastroAItems.BAKED_CASSAVA, 0
         );
+
+        stonecutterResultFromBase(
+                recipeOutput,
+                RecipeCategory.MISC,
+                GastroAItems.CRUSHED_CASSAVA,
+                GastroAItems.CASSAVA
+        );
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.SLIME_BALL)
+                .requires(GastroAItems.TAPIOCA_DOUGH)
+                .requires(Items.LIME_DYE)
+                .unlockedBy("has_tapioca_dough", has(GastroAItems.TAPIOCA_DOUGH))
+                .save(recipeOutput);
 
 //        List<ItemLike> MACHALITE_SMELTABLES = List.of(ModItems.MALACHITE_CHUNK, ModBlocks.MACHALITE_ORE);
 //
@@ -128,17 +170,17 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> ingredients, RecipeCategory category,
                                       ItemLike result, float experience, int cookingTime, String group) {
-        oreCooking(recipeOutput, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new,
+        recipeMaking(recipeOutput, RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new,
                 ingredients, category, result, experience, cookingTime, group, "_from_smelting");
     }
 
     protected static void oreBlasting(RecipeOutput recipeOutput, List<ItemLike> ingredients, RecipeCategory category,
                                       ItemLike result, float experience, int cookingTime, String group) {
-        oreCooking(recipeOutput, RecipeSerializer.BLASTING_RECIPE, BlastingRecipe::new,
+        recipeMaking(recipeOutput, RecipeSerializer.BLASTING_RECIPE, BlastingRecipe::new,
                 ingredients, category, result, experience, cookingTime, group, "_from_blasting");
     }
 
-    protected static <T extends AbstractCookingRecipe> void oreCooking(
+    protected static <T extends AbstractCookingRecipe> void recipeMaking(
             RecipeOutput recipeOutput,
             RecipeSerializer<T> serializer,
             AbstractCookingRecipe.Factory<T> recipeFactory,
