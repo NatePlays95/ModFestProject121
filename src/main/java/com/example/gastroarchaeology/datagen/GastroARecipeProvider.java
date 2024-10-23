@@ -6,9 +6,11 @@ import com.example.gastroarchaeology.item.GastroAItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
 import java.util.List;
@@ -111,6 +113,18 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .define('R', GastroAItems.PIZZA_RECIPE)
                 .define('C', GastroAItems.CHEESE)
                 .define('D', Items.WHEAT)
+                .pattern("SRC")
+                .pattern("DDD")
+                .unlockedBy("has_pizza_recipe", has(GastroAItems.PIZZA_RECIPE))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, GastroABlocks.BRAZILIAN_PIZZA)
+                .define('F', Tags.Items.FOODS)
+                .define('S', GastroAItems.TOMATO)
+                .define('R', GastroAItems.PIZZA_RECIPE)
+                .define('C', GastroAItems.CHEESE)
+                .define('D', Items.WHEAT)
+                .pattern("FFF")
                 .pattern("SRC")
                 .pattern("DDD")
                 .unlockedBy("has_pizza_recipe", has(GastroAItems.PIZZA_RECIPE))

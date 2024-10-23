@@ -38,6 +38,7 @@ public class GastroAItemModelProvider extends ItemModelProvider {
         basicItem(GastroAItems.HONEY_CARROT_YOGURT.get());
         basicItem(GastroAItems.CHORUS_FRUIT_YOGURT.get());
         basicItem(GastroABlocks.PIZZA.asItem());
+        basicItem(GastroABlocks.BRAZILIAN_PIZZA.asItem());
 
 
 //        basicItem(GastroAItems.TAPIOCA_RECIPE.get());

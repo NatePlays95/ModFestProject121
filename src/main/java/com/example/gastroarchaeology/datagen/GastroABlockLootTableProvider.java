@@ -33,6 +33,7 @@ public class GastroABlockLootTableProvider extends BlockLootSubProvider {
         dropOther(GastroABlocks.PEPPERS.get(), GastroAItems.PEPPER);
 
         add(GastroABlocks.PIZZA.get(), block -> createSingleItemTable(Items.AIR));
+        add(GastroABlocks.BRAZILIAN_PIZZA.get(), block -> createSingleItemTable(Items.AIR));
         add(GastroABlocks.SPICY_CHIPS.get(), block -> createSingleItemTable(Items.BOWL));
         add(GastroABlocks.EXTRA_SPICY_CHIPS.get(), block -> createSingleItemTable(Items.BOWL));
 

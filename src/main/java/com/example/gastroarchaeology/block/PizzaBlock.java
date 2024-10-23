@@ -11,8 +11,13 @@ public class PizzaBlock extends PlaceableFoodBlock {
 
     public static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 2.0, 15.0);
 
-    public PizzaBlock(Properties properties) {
+    int fullness;
+    float saturation;
+
+    public PizzaBlock(Properties properties, int fullness, float saturation) {
         super(properties);
+        this.fullness = fullness;
+        this.saturation = saturation;
     }
 
     @Override
@@ -30,12 +35,12 @@ public class PizzaBlock extends PlaceableFoodBlock {
      */
     @Override
     public int getBiteFullness() {
-        return 6;
+        return fullness;
     }
 
     @Override
     public float getBiteSaturation() {
-        return 3.0F;
+        return saturation;
     }
 
     @Override

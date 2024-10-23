@@ -81,7 +81,21 @@ public class GastroABlocks {
                     .sound(SoundType.WOOL)
                     .pushReaction(PushReaction.DESTROY)
                     .noOcclusion()
-                    .forceSolidOn()
+                    .forceSolidOn(),
+                    6, 0.3F
+            ),
+            new Item.Properties()
+                    .stacksTo(1)
+    );
+    public static final DeferredBlock<Block> BRAZILIAN_PIZZA = registerBlock(
+            "brazilian_pizza",
+            () -> new PizzaBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .sound(SoundType.WOOL)
+                    .pushReaction(PushReaction.DESTROY)
+                    .noOcclusion()
+                    .forceSolidOn(),
+                    10, 0.7F
             ),
             new Item.Properties()
                     .stacksTo(1)

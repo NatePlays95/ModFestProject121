@@ -63,6 +63,7 @@ public class Gastroarchaeology
                 output.accept(new ItemStack(GastroAItems.CHORUS_FRUIT_YOGURT.get()));
                 output.accept(new ItemStack(GastroAItems.PIZZA_RECIPE.get()));
                 output.accept(new ItemStack(GastroABlocks.PIZZA.get()));
+                output.accept(new ItemStack(GastroABlocks.BRAZILIAN_PIZZA.get()));
             })
             .build());
 
