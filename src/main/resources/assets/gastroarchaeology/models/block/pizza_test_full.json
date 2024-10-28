@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "gastroarchaeology:block/pizza_test_base",
-		"particle": "gastroarchaeology:item/pizza"
+		"0": "pizza_test_base",
+		"particle": "pizza_test_base"
 	},
 	"elements": [
 		{
@@ -25,7 +25,7 @@
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
 			"faces": {
 				"north": {"uv": [8, 3, 8.5, 3.5], "texture": "#0"},
-				"east": {"uv": [3.5, 0.5, 0.5, 1], "texture": "#0"},
+				"east": {"uv": [4, 0, 1, 0.5], "texture": "#0"},
 				"south": {"uv": [0, 8.5, 0.5, 9], "texture": "#0"},
 				"west": {"uv": [15.5, 1, 16, 4], "rotation": 270, "texture": "#0"},
 				"up": {"uv": [1, 1, 0.5, 4], "texture": "#0"},
@@ -163,7 +163,6 @@
 			}
 		}
 	],
-	"display": {},
 	"groups": [
 		{
 			"name": "slice1",

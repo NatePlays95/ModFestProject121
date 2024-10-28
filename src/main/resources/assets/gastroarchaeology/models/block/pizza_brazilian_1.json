@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "pizza_brazilian",
-		"particle": "pizza_brazilian"
+		"0": "gastroarchaeology:block/pizza_brazilian",
+		"particle": "gastroarchaeology:item/brazilian_pizza"
 	},
 	"elements": [
 		{
@@ -44,45 +44,6 @@
 				"up": {"uv": [1, 1, 4, 4], "texture": "#0"},
 				"down": {"uv": [15, 4, 12, 1], "texture": "#0"}
 			}
-		},
-		{
-			"from": [14, 0, 1],
-			"to": [15, 1, 8],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
-			"faces": {
-				"north": {"uv": [8.5, 0, 9, 0.5], "texture": "#0"},
-				"east": {"uv": [8, 0.5, 8.5, 4], "rotation": 90, "texture": "#0"},
-				"south": {"uv": [6.5, 9.5, 7, 10], "texture": "#0"},
-				"west": {"uv": [7.5, 7.5, 4, 8], "texture": "#0"},
-				"up": {"uv": [7.5, 0.5, 7, 4], "texture": "#0"},
-				"down": {"uv": [8.5, 4, 9, 0.5], "texture": "#0"}
-			}
-		},
-		{
-			"from": [8, 0, 1],
-			"to": [14, 1, 2],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
-			"faces": {
-				"north": {"uv": [9, 0, 12, 0.5], "texture": "#0"},
-				"east": {"uv": [8.5, 3, 9, 3.5], "texture": "#0"},
-				"south": {"uv": [4, 0, 1, 0.5], "texture": "#0"},
-				"west": {"uv": [0, 9.5, 0.5, 10], "texture": "#0"},
-				"up": {"uv": [4, 1, 7, 0.5], "texture": "#0"},
-				"down": {"uv": [12, 0.5, 9, 1], "texture": "#0"}
-			}
-		},
-		{
-			"from": [8, 0, 2],
-			"to": [14, 0.5, 8],
-			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
-			"faces": {
-				"north": {"uv": [0, 12.5, 3, 13], "texture": "#0"},
-				"east": {"uv": [9, 12.5, 12, 13], "texture": "#0"},
-				"south": {"uv": [3.5, 9.5, 6.5, 10], "texture": "#0"},
-				"west": {"uv": [0.5, 9.5, 3.5, 10], "texture": "#0"},
-				"up": {"uv": [4, 1, 7, 4], "texture": "#0"},
-				"down": {"uv": [12, 4, 9, 1], "texture": "#0"}
-			}
 		}
 	],
 	"groups": [
@@ -91,12 +52,6 @@
 			"origin": [1, 0, 7],
 			"color": 0,
 			"children": [0, 1, 2]
-		},
-		{
-			"name": "slice2",
-			"origin": [1, 0, 7],
-			"color": 0,
-			"children": [3, 4, 5]
 		}
 	]
 }
