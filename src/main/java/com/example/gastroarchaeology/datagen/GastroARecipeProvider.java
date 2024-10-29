@@ -97,13 +97,15 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroABlocks.SPICY_CHIPS)
                 .requires(GastroAItems.PEPPER)
                 .requires(Items.BAKED_POTATO)
+                .requires(Items.RED_DYE)
                 .requires(Items.BOWL)
                 .unlockedBy("has_pepper", has(GastroAItems.PEPPER))
                 .save(recipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroABlocks.EXTRA_SPICY_CHIPS)
-                .requires(GastroAItems.PEPPER,7)
+                .requires(GastroAItems.PEPPER,6)
                 .requires(Items.BAKED_POTATO)
+                .requires(Items.RED_DYE)
                 .requires(Items.BOWL)
                 .unlockedBy("has_pepper", has(GastroAItems.PEPPER))
                 .save(recipeOutput);
