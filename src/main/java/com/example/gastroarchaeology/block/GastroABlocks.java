@@ -32,7 +32,7 @@ public class GastroABlocks {
 //            ));
 
     // Crops
-    public static final DeferredBlock<Block> CASSAVAS = registerBlock(
+    public static final DeferredBlock<CassavaBlock> CASSAVAS = registerBlock(
             "cassavas",
             () -> new CassavaBlock(
                     BlockBehaviour.Properties.of()
@@ -45,7 +45,7 @@ public class GastroABlocks {
             ),
             null
     );
-    public static final DeferredBlock<Block> TOMATOES = registerBlock(
+    public static final DeferredBlock<TomatoBlock> TOMATOES = registerBlock(
             "tomatoes",
             () -> new TomatoBlock(
                     BlockBehaviour.Properties.of()
@@ -58,7 +58,7 @@ public class GastroABlocks {
             ),
             null
     );
-    public static final DeferredBlock<Block> PEPPERS = registerBlock(
+    public static final DeferredBlock<PepperBlock> PEPPERS = registerBlock(
             "peppers",
             () -> new PepperBlock(
                     BlockBehaviour.Properties.of()

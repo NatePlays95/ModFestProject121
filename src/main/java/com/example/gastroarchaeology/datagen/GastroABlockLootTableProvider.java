@@ -1,7 +1,11 @@
 package com.example.gastroarchaeology.datagen;
 
+import com.example.gastroarchaeology.block.CassavaBlock;
 import com.example.gastroarchaeology.block.GastroABlocks;
+import com.example.gastroarchaeology.block.PepperBlock;
+import com.example.gastroarchaeology.block.TomatoBlock;
 import com.example.gastroarchaeology.item.GastroAItems;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -12,10 +16,16 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CarrotBlock;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.Set;
@@ -27,15 +37,26 @@ public class GastroABlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        //TODO: Change these to crop-like loot tables
-        dropOther(GastroABlocks.CASSAVAS.get(), GastroAItems.CASSAVA);
-        dropOther(GastroABlocks.TOMATOES.get(), GastroAItems.TOMATO);
-        dropOther(GastroABlocks.PEPPERS.get(), GastroAItems.PEPPER);
-
         add(GastroABlocks.PIZZA.get(), block -> createSingleItemTable(Items.AIR));
         add(GastroABlocks.BRAZILIAN_PIZZA.get(), block -> createSingleItemTable(Items.AIR));
         add(GastroABlocks.SPICY_CHIPS.get(), block -> createSingleItemTable(Items.BOWL));
         add(GastroABlocks.EXTRA_SPICY_CHIPS.get(), block -> createSingleItemTable(Items.BOWL));
+
+        HolderLookup.RegistryLookup<Enchantment> enchantmentRegistryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+
+        LootItemCondition.Builder cassavaAgeCondition = LootItemBlockStatePropertyCondition.hasBlockStateProperties(GastroABlocks.CASSAVAS.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CassavaBlock.AGE, 7));
+        LootItemCondition.Builder pepperAgeCondition = LootItemBlockStatePropertyCondition.hasBlockStateProperties(GastroABlocks.PEPPERS.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PepperBlock.AGE, 7));
+        LootItemCondition.Builder tomatoAgeCondition = LootItemBlockStatePropertyCondition.hasBlockStateProperties(GastroABlocks.TOMATOES.get())
+                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TomatoBlock.AGE, 7));
+
+        add(GastroABlocks.CASSAVAS.get(), block -> createCropNoSeedDrops(GastroABlocks.CASSAVAS.get(), GastroAItems.CASSAVA.get(),
+                cassavaAgeCondition, enchantmentRegistryLookup));
+        add(GastroABlocks.PEPPERS.get(), block -> createCropNoSeedDrops(GastroABlocks.PEPPERS.get(), GastroAItems.PEPPER.get(),
+                pepperAgeCondition, enchantmentRegistryLookup));
+        add(GastroABlocks.TOMATOES.get(), block -> createCropNoSeedDrops(GastroABlocks.TOMATOES.get(), GastroAItems.TOMATO.get(),
+                tomatoAgeCondition, enchantmentRegistryLookup));
 
 //        HolderLookup.RegistryLookup<Enchantment> enchantmentRegistryLookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
 
@@ -86,6 +107,21 @@ public class GastroABlockLootTableProvider extends BlockLootSubProvider {
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops)))
                                 .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))
                                 //.apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(ModEnchantments.MINING_MASTER.get())))
+                )
+        );
+    }
+
+    protected LootTable.Builder createCropNoSeedDrops(CropBlock crop, Item cropItem, LootItemCondition.Builder cropAgeConditionBuilder, HolderLookup.RegistryLookup<Enchantment> enchantmentRegistryLookup) {
+        return this.applyExplosionDecay(
+            crop,
+            LootTable.lootTable()
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(cropItem)))
+                .withPool(
+                    LootPool.lootPool()
+                        .when(cropAgeConditionBuilder).add(
+                            LootItem.lootTableItem(cropItem)
+                                .apply(ApplyBonusCount.addBonusBinomialDistributionCount(enchantmentRegistryLookup.getOrThrow(Enchantments.FORTUNE), 0.5714286F, 3))
+                        )
                 )
         );
     }
