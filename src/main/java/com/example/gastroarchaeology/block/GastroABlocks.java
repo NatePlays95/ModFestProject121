@@ -74,7 +74,7 @@ public class GastroABlocks {
     );
 
     // Placeable foods
-    public static final DeferredBlock<Block> PIZZA = registerBlock(
+    public static final DeferredBlock<PizzaBlock> PIZZA = registerBlock(
             "pizza",
             () -> new PizzaBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_YELLOW)
@@ -87,7 +87,7 @@ public class GastroABlocks {
             new Item.Properties()
                     .stacksTo(1)
     );
-    public static final DeferredBlock<Block> BRAZILIAN_PIZZA = registerBlock(
+    public static final DeferredBlock<PizzaBlock> BRAZILIAN_PIZZA = registerBlock(
             "brazilian_pizza",
             () -> new PizzaBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_YELLOW)
@@ -100,7 +100,7 @@ public class GastroABlocks {
             new Item.Properties()
                     .stacksTo(1)
     );
-    public static final DeferredBlock<Block> SPICY_CHIPS = registerBlock(
+    public static final DeferredBlock<SpicyChipsBlock> SPICY_CHIPS = registerBlock(
             "spicy_chips",
             () -> new SpicyChipsBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_YELLOW)
@@ -112,9 +112,9 @@ public class GastroABlocks {
             new Item.Properties()
                     .stacksTo(1)
     );
-    public static final DeferredBlock<Block> EXTRA_SPICY_CHIPS = registerBlock(
+    public static final DeferredBlock<ExtraSpicyChipsBlock> EXTRA_SPICY_CHIPS = registerBlock(
             "extra_spicy_chips",
-            () -> new SpicyChipsBlock(BlockBehaviour.Properties.of()
+            () -> new ExtraSpicyChipsBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_RED)
                     .sound(SoundType.WOOL)
                     .pushReaction(PushReaction.DESTROY)

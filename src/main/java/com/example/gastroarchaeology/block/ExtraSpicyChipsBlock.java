@@ -13,15 +13,28 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class ExtraSpicyChipsBlock extends PlaceableFoodBlock{
-    public static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 5.0, 15.0);
+    public static final VoxelShape SHAPE = Block.box(3.0, 0.0, 3.0, 13.0, 5.0, 13.0);
 
     public ExtraSpicyChipsBlock(Properties properties) {
         super(properties);
     }
 
+    protected float chanceForSpicyChip() {
+        return 1f/6f;
+    };
+
+    protected int spiceEffectLevel() {
+        return 4;
+    }
+
+    protected int spiceEffectDuration() {
+        return 150;
+    }
+
+
     @Override
     public int getMaxBites() {
-        return 8;
+        return 7;
     }
 
     @Override
@@ -31,7 +44,7 @@ public class ExtraSpicyChipsBlock extends PlaceableFoodBlock{
 
     @Override
     public int getBiteFullness() {
-        return 0;
+        return 1;
     }
 
     @Override
@@ -52,8 +65,8 @@ public class ExtraSpicyChipsBlock extends PlaceableFoodBlock{
     @Override
     protected InteractionResult eat(LevelAccessor level, BlockPos pos, BlockState state, Player player) {
         InteractionResult result = super.eat(level, pos, state, player);
-        if(result == InteractionResult.SUCCESS && level.getRandom().nextIntBetweenInclusive(10, 18) == 13)
-            player.addEffect(new MobEffectInstance(GatroAMobEffects.BURNING, 400, 3));
+        if(result == InteractionResult.SUCCESS && level.getRandom().nextFloat() < this.chanceForSpicyChip())
+            player.addEffect(new MobEffectInstance(GatroAMobEffects.BURNING, this.spiceEffectDuration(), this.spiceEffectLevel()));
         return result;
     }
 }

@@ -59,7 +59,9 @@ public abstract class PlaceableFoodBlock extends Block {
 //    public VoxelShape getShapeByBite(BlockState state) {return Shapes.block();}
     public abstract VoxelShape getShapeByBite(BlockState state);
 
-
+    public IntegerProperty getBitesProperty() {
+        return BITES;
+    }
 
 
     @Override
@@ -114,11 +116,11 @@ public abstract class PlaceableFoodBlock extends Block {
         } else {
 //            player.awardStat(Stats.EAT_CAKE_SLICE);
             player.getFoodData().eat(this.getBiteFullness(), this.getBiteSaturation());
-            int i = state.getValue(BITES);
+            int i = state.getValue(this.getBitesProperty());
             level.playSound(player, pos, this.getEatSound(), SoundSource.PLAYERS, 1.0F, 1.0F);
             level.gameEvent(player, GameEvent.EAT, pos);
             if (i < this.getMaxBites()) {
-                level.setBlock(pos, state.setValue(BITES, Integer.valueOf(i + 1)), 3);
+                level.setBlock(pos, state.setValue(this.getBitesProperty(), Integer.valueOf(i + 1)), 3);
             } else {
                 level.removeBlock(pos, false);
                 level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
