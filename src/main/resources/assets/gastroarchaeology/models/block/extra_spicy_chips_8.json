@@ -1,9 +1,8 @@
 {
 	"credit": "Made with Blockbench",
-	"render_type": "cutout",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "gastroarchaeology:block/spicy_chips"
+		"1": "gastroarchaeology:block/extra_spicy_chips"
 	},
 	"elements": [
 		{

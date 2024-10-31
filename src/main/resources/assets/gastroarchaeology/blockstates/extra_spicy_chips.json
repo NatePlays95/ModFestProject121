@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "bites=0": {
+      "model": "gastroarchaeology:block/extra_spicy_chips_8"
+    },
+    "bites=1": {
+      "model": "gastroarchaeology:block/extra_spicy_chips_7"
+    },
+    "bites=2": {
+      "model": "gastroarchaeology:block/extra_spicy_chips_6"
+    },
+    "bites=3": {
+      "model": "gastroarchaeology:block/extra_spicy_chips_5"
+    },
+    "bites=4": {
+      "model": "gastroarchaeology:block/extra_spicy_chips_4"
+    },
+    "bites=5": {
+      "model": "gastroarchaeology:block/extra_spicy_chips_3"
+    },
+    "bites=6": {
+      "model": "gastroarchaeology:block/extra_spicy_chips_2"
+    },
+    "bites=7": {
+      "model": "gastroarchaeology:block/extra_spicy_chips_1"
+    }
+  }
+}

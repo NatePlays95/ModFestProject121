@@ -1,9 +1,8 @@
 {
 	"credit": "Made with Blockbench",
-	"render_type": "cutout",
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "gastroarchaeology:block/spicy_chips"
+		"1": "gastroarchaeology:block/extra_spicy_chips"
 	},
 	"elements": [
 		{
@@ -172,19 +171,6 @@
 				"up": {"uv": [9.5, 9, 9, 8], "texture": "#1"},
 				"down": {"uv": [10, 8, 9.5, 9], "texture": "#1"}
 			}
-		},
-		{
-			"from": [7, 1.25, 10.82843],
-			"to": [9, 4.25, 11.82843],
-			"rotation": {"angle": -45, "axis": "y", "origin": [8, 1.25, 8]},
-			"faces": {
-				"north": {"uv": [0.5, 9, 1.5, 10.5], "texture": "#1"},
-				"east": {"uv": [0, 9, 0.5, 10.5], "texture": "#1"},
-				"south": {"uv": [2, 9, 3, 10.5], "texture": "#1"},
-				"west": {"uv": [1.5, 9, 2, 10.5], "texture": "#1"},
-				"up": {"uv": [1.5, 9, 0.5, 8.5], "texture": "#1"},
-				"down": {"uv": [2.5, 8.5, 1.5, 9], "texture": "#1"}
-			}
 		}
 	],
 	"groups": [
@@ -235,12 +221,6 @@
 			"origin": [4, 3, 4],
 			"color": 0,
 			"children": [12]
-		},
-		{
-			"name": "chip8",
-			"origin": [4, 3, 4],
-			"color": 0,
-			"children": [13]
 		}
 	]
 }
