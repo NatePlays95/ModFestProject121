@@ -6,6 +6,7 @@ import com.example.gastroarchaeology.item.GastroAItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -21,6 +22,10 @@ public class GastroAItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        tag(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(GastroAItems.CASSAVA.get())
+                                              .add(GastroAItems.PEPPER.get())
+                                              .add(GastroAItems.TOMATO.get());
+
         tag(Tags.Items.CROPS).add(GastroAItems.CASSAVA.get())
                              .add(GastroAItems.PEPPER.get())
                              .add(GastroAItems.TOMATO.get());
