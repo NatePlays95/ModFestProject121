@@ -120,10 +120,11 @@ public abstract class PlaceableFoodBlock extends Block {
             level.playSound(player, pos, this.getEatSound(), SoundSource.PLAYERS, 1.0F, 1.0F);
             level.gameEvent(player, GameEvent.EAT, pos);
             if (i < this.getMaxBites()) {
-                level.setBlock(pos, state.setValue(this.getBitesProperty(), Integer.valueOf(i + 1)), 3);
+                level.setBlock(pos, state.setValue(this.getBitesProperty(), i + 1), 3);
             } else {
                 level.removeBlock(pos, false);
                 level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
+                dropResources(state, (Level) level, pos, null, player, ItemStack.EMPTY);
             }
 
             return InteractionResult.SUCCESS;
