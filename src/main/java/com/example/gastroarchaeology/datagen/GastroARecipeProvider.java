@@ -69,7 +69,7 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAItems.TAPIOCA_BEEF_WRAP)
                 .requires(GastroAItems.TAPIOCA_RECIPE)
                 .requires(GastroAItems.TAPIOCA_DOUGH)
-                .requires(Items.BEEF)
+                .requires(Items.COOKED_BEEF)
                 .unlockedBy("has_tapioca_recipe", has(GastroAItems.TAPIOCA_RECIPE))
                 .save(recipeOutput);
 
