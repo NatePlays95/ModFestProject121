@@ -8,6 +8,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.DecoratedPotBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.DecoratedPotBlockEntity;
@@ -36,10 +37,10 @@ public abstract class DecoratedPotBlockMixin extends BaseEntityBlock {
                     potEntity.setTheItem(itemStack.transmuteCopy(GastroAItems.CURD_BUCKET.get()));
 
                     Vec3 centerPos = blockPos.getCenter();
-                    serverLevel.addParticle(
+                    serverLevel.sendParticles(
                             ParticleTypes.HAPPY_VILLAGER,
-                            centerPos.x(), centerPos.y() + 0.6, centerPos.z(),
-                            0, 0, 0
+                            centerPos.x(), centerPos.y() + 0.8, centerPos.z(),
+                            10, 0.4, 0.2, 0.4,0
                     );
                 }
             }
