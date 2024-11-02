@@ -32,7 +32,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class Gastroarchaeology
 {
     public static final String MOD_ID = "gastroarchaeology";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> GASTROARCHEOLOGY_TAB = CREATIVE_MODE_TABS.register("gastroarchaeology_tab", () -> CreativeModeTab.builder()

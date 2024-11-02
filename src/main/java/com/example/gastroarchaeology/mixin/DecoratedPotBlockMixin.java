@@ -1,7 +1,7 @@
 package com.example.gastroarchaeology.mixin;
 
 import com.example.gastroarchaeology.item.GastroAItems;
-import com.mojang.logging.LogUtils;
+import com.example.gastroarchaeology.Gastroarchaeology;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -12,6 +12,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DecoratedPotBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -30,9 +31,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Random;
 
 @Mixin(DecoratedPotBlock.class)
-public abstract class DecoratedPotBlockMixin {
-
-    private static final Logger LOGGER = LogUtils.getLogger();
+public abstract class DecoratedPotBlockMixin extends BaseEntityBlock {
+    protected DecoratedPotBlockMixin(Properties properties) {
+        super(properties);
+    }
 
     @Inject(method = "useItemOn", at = @At("HEAD"), cancellable = true)
     public void onUseItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult, CallbackInfoReturnable<ItemInteractionResult> info) {
@@ -62,20 +64,20 @@ public abstract class DecoratedPotBlockMixin {
 //    @Inject(method = "tick", at = @At("HEAD"))
 //    public void onTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random, CallbackInfo ci) {
 //        // Custom tick behavior
-//        LOGGER.debug("Scheduled tick for DecoratedPotBlock at {}", pos);
+//        Gastroarchaeology.LOGGER.debug("Scheduled tick for DecoratedPotBlock at {}", pos);
 //
 //        // Re-schedule another tick in 20 game ticks (1 second)
 //        world.scheduleTick(pos, state.getBlock(), 20);
 //    }
-
+//
 //    private void potBlockAddCurd(DecoratedPotBlock potBlock, BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
 //        // Custom logic for changing the pot's contents during a random tick
-//        LOGGER.debug("b");
+//        Gastroarchaeology.LOGGER.debug("b");
 //        if (!level.isClientSide()) {
-//            LOGGER.debug("c");
+//            Gastroarchaeology.LOGGER.debug("c");
 //            BlockEntity blockEntity = level.getBlockEntity(pos);
 //            if (blockEntity instanceof DecoratedPotBlockEntity potEntity) {
-//                LOGGER.debug("d");
+//                Gastroarchaeology.LOGGER.debug("d");
 //                ItemStack itemStack = potEntity.getTheItem();
 //                if (!itemStack.isEmpty() && itemStack.is(Items.MILK_BUCKET)) {
 //                    potEntity.setTheItem(new ItemStack(GastroAItems.CURD_BUCKET.get()));
