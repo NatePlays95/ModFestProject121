@@ -159,8 +159,8 @@ public class GastroAItems {
     public static final DeferredItem<Item> TAPIOCA_CHEESE_WRAP = ITEMS.register(
             "tapioca_cheese_wrap", () -> new Item(
                     new Item.Properties().food(new FoodProperties.Builder()
-                            .nutrition(2)
-                            .saturationModifier(0.3f)
+                            .nutrition(6)
+                            .saturationModifier(0.5f)
                             .build())
             )
     );
@@ -168,7 +168,7 @@ public class GastroAItems {
             "tapioca_beef_wrap", () -> new Item(
                     new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(8)
-                            .saturationModifier(0.9f)
+                            .saturationModifier(1.0f)
                             .build())
             )
     );
@@ -176,7 +176,7 @@ public class GastroAItems {
             "tapioca_ham_and_cheese_wrap", () -> new Item(
                     new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(9)
-                            .saturationModifier(0.9f)
+                            .saturationModifier(1.0f)
                             .build())
             )
     );
