@@ -118,9 +118,9 @@ public class GastroAGlobalLootModifierProvider extends GlobalLootModifierProvide
                 "oceanruins_cold_recipe_modifier",
                 new GastroARandomOverrideLootModifier(
                         new LootItemCondition[] {
-                                LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/ocean_ruin_warm")).build()
+                                LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/ocean_ruin_cold")).build()
                         },
-                        0.03f,
+                        0.05f,
                         GastroAItems.YOGURT_RECIPE.get(),
                         1, 1
                 ),
@@ -133,7 +133,7 @@ public class GastroAGlobalLootModifierProvider extends GlobalLootModifierProvide
                         new LootItemCondition[] {
                                 LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/desert_pyramid")).build()
                         },
-                        0.03f,
+                        0.05f,
                         GastroAItems.PIZZA_RECIPE.get(),
                         1, 1
                 ),
@@ -146,7 +146,7 @@ public class GastroAGlobalLootModifierProvider extends GlobalLootModifierProvide
                         new LootItemCondition[] {
                                 LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/trail_ruins_rare")).build()
                         },
-                        0.03f,
+                        0.05f,
                         GastroAItems.TAPIOCA_RECIPE.get(),
                         1, 1
                 ),

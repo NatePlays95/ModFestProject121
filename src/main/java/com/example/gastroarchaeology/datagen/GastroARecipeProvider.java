@@ -23,7 +23,7 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAItems.CURD_MIXTURE)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAItems.CURD_MIXTURE, 3)
                 .requires(GastroAItems.CURD_BUCKET)
                 .requires(Items.STONE) //TODO: replace with salt?
                 .unlockedBy("has_curd_bucket", has(GastroAItems.CURD_BUCKET))
