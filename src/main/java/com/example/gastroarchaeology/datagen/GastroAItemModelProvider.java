@@ -22,6 +22,7 @@ public class GastroAItemModelProvider extends ItemModelProvider {
         basicItem(GastroAItems.BAKED_CASSAVA.get());
         basicItem(GastroAItems.CRUSHED_CASSAVA.get());
         basicItem(GastroAItems.CASSAVA_DOUGH.get());
+        basicItem(GastroAItems.CASSAVA_FLOUR.get());
         basicItem(GastroAItems.TAPIOCA_DOUGH.get());
         basicItem(GastroAItems.PEPPER.get());
         basicItem(GastroAItems.TOMATO.get());
@@ -33,6 +34,10 @@ public class GastroAItemModelProvider extends ItemModelProvider {
         basicItem(GastroAItems.TAPIOCA_BEEF_WRAP.get());
         basicItem(GastroAItems.TAPIOCA_CHEESE_WRAP.get());
         basicItem(GastroAItems.TAPIOCA_HAM_AND_CHEESE_WRAP.get());
+        basicItem(GastroAItems.BEEF_PACOCA.get());
+        basicItem(GastroAItems.PORK_PACOCA.get());
+        basicItem(GastroAItems.CHICKEN_PACOCA.get());
+        basicItem(GastroAItems.FISH_PACOCA.get());
         basicItem(GastroAItems.SWEET_BERRY_YOGURT.get());
         basicItem(GastroAItems.GLOW_BERRY_YOGURT.get());
         basicItem(GastroAItems.HONEY_CARROT_YOGURT.get());

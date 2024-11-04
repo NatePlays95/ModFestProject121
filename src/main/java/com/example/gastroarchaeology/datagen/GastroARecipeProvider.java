@@ -93,6 +93,34 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .unlockedBy("has_crushed_cassava", has(GastroAItems.CRUSHED_CASSAVA))
                 .save(recipeOutput);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GastroAItems.BEEF_PACOCA, 2)
+                .requires(GastroAItems.PACOCA_RECIPE)
+                .requires(GastroAItems.CASSAVA_FLOUR)
+                .requires(Items.COOKED_BEEF)
+                .unlockedBy("has_pacoca_recipe", has(GastroAItems.PACOCA_RECIPE))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GastroAItems.PORK_PACOCA, 2)
+                .requires(GastroAItems.PACOCA_RECIPE)
+                .requires(GastroAItems.CASSAVA_FLOUR)
+                .requires(Items.COOKED_PORKCHOP)
+                .unlockedBy("has_pacoca_recipe", has(GastroAItems.PACOCA_RECIPE))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GastroAItems.CHICKEN_PACOCA, 2)
+                .requires(GastroAItems.PACOCA_RECIPE)
+                .requires(GastroAItems.CASSAVA_FLOUR)
+                .requires(Items.COOKED_CHICKEN)
+                .unlockedBy("has_pacoca_recipe", has(GastroAItems.PACOCA_RECIPE))
+                .save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GastroAItems.FISH_PACOCA, 2)
+                .requires(GastroAItems.PACOCA_RECIPE)
+                .requires(GastroAItems.CASSAVA_FLOUR)
+                .requires(Items.COOKED_COD)
+                .unlockedBy("has_pacoca_recipe", has(GastroAItems.PACOCA_RECIPE))
+                .save(recipeOutput);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroABlocks.SPICY_CHIPS)
                 .requires(GastroAItems.PEPPER)
                 .requires(Items.BAKED_POTATO)
@@ -136,20 +164,13 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 "smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new,
                 100, GastroAItems.CURD_MIXTURE, GastroAItems.CHEESE, 2
         );
-        simpleCookingRecipe(
+        tripleCookingRecipe(
                 recipeOutput,
-                "smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new,
-                100, GastroAItems.CASSAVA, GastroAItems.BAKED_CASSAVA, 2
-        );
-        simpleCookingRecipe(
-                recipeOutput,
-                "smelting", RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new,
                 200, GastroAItems.CASSAVA, GastroAItems.BAKED_CASSAVA, 2
         );
-        simpleCookingRecipe(
+        tripleCookingRecipe(
                 recipeOutput,
-                "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new,
-                400, GastroAItems.CASSAVA, GastroAItems.BAKED_CASSAVA, 0
+                200, GastroAItems.CASSAVA_DOUGH, GastroAItems.CASSAVA_FLOUR, 2
         );
 
         stonecutterResultFromBase(
@@ -205,7 +226,23 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
 //                .unlockedBy("has_machalite_ingot", has(ModItems.MALACHITE_INGOT.get())).save(recipeOutput);
     }
 
-
+    protected static void tripleCookingRecipe(RecipeOutput recipeOutput, int cookingTime, ItemLike material, ItemLike result, float experience) {
+        simpleCookingRecipe(
+                recipeOutput,
+                "smoking", RecipeSerializer.SMOKING_RECIPE, SmokingRecipe::new,
+                cookingTime / 2, material, result, experience
+        );
+        simpleCookingRecipe(
+                recipeOutput,
+                "smelting", RecipeSerializer.SMELTING_RECIPE, SmeltingRecipe::new,
+                cookingTime, material, result, experience
+        );
+        simpleCookingRecipe(
+                recipeOutput,
+                "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING_RECIPE, CampfireCookingRecipe::new,
+                cookingTime * 2, material, result, 0
+        );
+    }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> ingredients, RecipeCategory category,
                                       ItemLike result, float experience, int cookingTime, String group) {

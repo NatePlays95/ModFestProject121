@@ -44,6 +44,7 @@ public class Gastroarchaeology
                 output.accept(new ItemStack(GastroAItems.BAKED_CASSAVA.get()));
                 output.accept(new ItemStack(GastroAItems.CRUSHED_CASSAVA.get()));
                 output.accept(new ItemStack(GastroAItems.CASSAVA_DOUGH.get()));
+                output.accept(new ItemStack(GastroAItems.CASSAVA_FLOUR.get()));
                 output.accept(new ItemStack(GastroAItems.TAPIOCA_DOUGH.get()));
                 output.accept(new ItemStack(GastroAItems.PEPPER.get()));
                 output.accept(new ItemStack(GastroAItems.TOMATO.get()));
@@ -56,6 +57,11 @@ public class Gastroarchaeology
                 output.accept(new ItemStack(GastroAItems.TAPIOCA_BEEF_WRAP.get()));
                 output.accept(new ItemStack(GastroAItems.TAPIOCA_CHEESE_WRAP.get()));
                 output.accept(new ItemStack(GastroAItems.TAPIOCA_HAM_AND_CHEESE_WRAP.get()));
+                output.accept(new ItemStack(GastroAItems.PACOCA_RECIPE.get()));
+                output.accept(new ItemStack(GastroAItems.BEEF_PACOCA.get()));
+                output.accept(new ItemStack(GastroAItems.PORK_PACOCA.get()));
+                output.accept(new ItemStack(GastroAItems.CHICKEN_PACOCA.get()));
+                output.accept(new ItemStack(GastroAItems.FISH_PACOCA.get()));
                 output.accept(new ItemStack(GastroAItems.YOGURT_RECIPE.get()));
                 output.accept(new ItemStack(GastroAItems.SWEET_BERRY_YOGURT.get()));
                 output.accept(new ItemStack(GastroAItems.GLOW_BERRY_YOGURT.get()));

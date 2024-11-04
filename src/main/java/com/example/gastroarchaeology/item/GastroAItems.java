@@ -50,10 +50,54 @@ public class GastroAItems {
     // Food
     public static final DeferredItem<Item> BAKED_CASSAVA = ITEMS.register(
             "baked_cassava", () -> new Item(
-                new Item.Properties().food(new FoodProperties.Builder()
-                        .nutrition(7)
-                        .saturationModifier(0.7f)
-                        .build())
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(7)
+                            .saturationModifier(0.7f)
+                            .build())
+            )
+    );
+    public static final DeferredItem<Item> CASSAVA_FLOUR = ITEMS.register(
+            "cassava_flour", () -> new Item(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(1)
+                            .fast()
+                            .build())
+            )
+    );
+    public static final DeferredItem<Item> BEEF_PACOCA = ITEMS.register(
+            "beef_pacoca", () -> new Item(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.8F)
+                            .fast()
+                            .build())
+            )
+    );
+    public static final DeferredItem<Item> PORK_PACOCA = ITEMS.register(
+            "pork_pacoca", () -> new Item(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationModifier(0.8F)
+                            .fast()
+                            .build())
+            )
+    );
+    public static final DeferredItem<Item> CHICKEN_PACOCA = ITEMS.register(
+            "chicken_pacoca", () -> new Item(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(3)
+                            .saturationModifier(0.6F)
+                            .fast()
+                            .build())
+            )
+    );
+    public static final DeferredItem<Item> FISH_PACOCA = ITEMS.register(
+            "fish_pacoca", () -> new Item(
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(3)
+                            .saturationModifier(0.5F)
+                            .fast()
+                            .build())
             )
     );
     public static final DeferredItem<Item> CHEESE = ITEMS.register(
@@ -156,7 +200,7 @@ public class GastroAItems {
     public static final DeferredItem<Item> CRUSHED_CASSAVA = ITEMS.register(
             "crushed_cassava", () -> new Item(
                     new Item.Properties()
-                            .craftRemainder(GastroAItems.TAPIOCA_DOUGH.get())
+                            .craftRemainder(GastroAItems.CASSAVA_DOUGH.get())
             )
     );
 
@@ -171,6 +215,10 @@ public class GastroAItems {
 
     public static final DeferredItem<Item> TAPIOCA_RECIPE = ITEMS.register(
             "tapioca_recipe", RecipeItem::new
+    );
+
+    public static final DeferredItem<Item> PACOCA_RECIPE = ITEMS.register(
+            "pacoca_recipe", RecipeItem::new
     );
 
     //cheese wheel, placeable, itemnameblockitem

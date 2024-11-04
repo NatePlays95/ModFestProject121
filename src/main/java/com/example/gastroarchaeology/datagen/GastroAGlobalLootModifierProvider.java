@@ -153,5 +153,18 @@ public class GastroAGlobalLootModifierProvider extends GlobalLootModifierProvide
                 List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID))
         );
 
+        add(
+                "oceanruins_warm_recipe_modifier",
+                new GastroARandomOverrideLootModifier(
+                        new LootItemCondition[] {
+                                LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("archaeology/ocean_ruin_warm")).build()
+                        },
+                        0.05f,
+                        GastroAItems.PACOCA_RECIPE.get(),
+                        1, 1
+                ),
+                List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID))
+        );
+
     }
 }
