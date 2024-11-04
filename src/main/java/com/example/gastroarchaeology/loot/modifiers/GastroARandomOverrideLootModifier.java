@@ -15,50 +15,50 @@ import net.neoforged.neoforge.common.loot.LootModifier;
 
 public class GastroARandomOverrideLootModifier extends LootModifier {
 
-    public static final MapCodec<GastroARandomOverrideLootModifier> CODEC = RecordCodecBuilder.mapCodec(inst ->
-            // LootModifier#codecStart adds the conditions field.
-            LootModifier.codecStart(inst).and(inst.group(
-                    Codec.FLOAT.fieldOf("chance").forGetter(e -> e.chance),
-                    BuiltInRegistries.ITEM.byNameCodec().fieldOf("replacement_item").forGetter(e -> e.replacementItem),
-                    Codec.INT.fieldOf("min_count").forGetter(e -> e.minCount),
-                    Codec.INT.fieldOf("max_count").forGetter(e -> e.maxCount)
-            )).apply(inst, GastroARandomOverrideLootModifier::new)
-    );
+	public static final MapCodec<GastroARandomOverrideLootModifier> CODEC = RecordCodecBuilder.mapCodec(inst ->
+			// LootModifier#codecStart adds the conditions field.
+			LootModifier.codecStart(inst).and(inst.group(
+					Codec.FLOAT.fieldOf("chance").forGetter(e -> e.chance),
+					BuiltInRegistries.ITEM.byNameCodec().fieldOf("replacement_item").forGetter(e -> e.replacementItem),
+					Codec.INT.fieldOf("min_count").forGetter(e -> e.minCount),
+					Codec.INT.fieldOf("max_count").forGetter(e -> e.maxCount)
+			)).apply(inst, GastroARandomOverrideLootModifier::new)
+	);
 
-    // Our extra properties.
-    private final float chance;
-    private final Item replacementItem;
-    private final int minCount;
-    private final int maxCount;
+	// Our extra properties.
+	private final float chance;
+	private final Item replacementItem;
+	private final int minCount;
+	private final int maxCount;
 
-    // First constructor parameter is the list of conditions. The rest is our extra properties.
-    public GastroARandomOverrideLootModifier(LootItemCondition[] conditions, float chance, Item replacement_item, int min_count, int max_count) {
-        super(conditions);
-        this.chance = chance;
-        this.replacementItem = replacement_item;
-        this.minCount = min_count;
-        this.maxCount = max_count;
-    }
+	// First constructor parameter is the list of conditions. The rest is our extra properties.
+	public GastroARandomOverrideLootModifier(LootItemCondition[] conditions, float chance, Item replacement_item, int min_count, int max_count) {
+		super(conditions);
+		this.chance = chance;
+		this.replacementItem = replacement_item;
+		this.minCount = min_count;
+		this.maxCount = max_count;
+	}
 
-    // Return our codec here.
-    @Override
-    public MapCodec<? extends IGlobalLootModifier> codec() {
-        return CODEC;
-    }
+	// Return our codec here.
+	@Override
+	public MapCodec<? extends IGlobalLootModifier> codec() {
+		return CODEC;
+	}
 
-    // This is where the magic happens. Use your extra properties here if needed.
-    // Parameters are the existing loot, and the loot context.
-    @Override
-    protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
-        RandomSource rn = context.getRandom();
-        //if it doesn't roll for replacement
-        if (rn.nextFloat() > this.chance) return generatedLoot;
+	// This is where the magic happens. Use your extra properties here if needed.
+	// Parameters are the existing loot, and the loot context.
+	@Override
+	protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
+		RandomSource rn = context.getRandom();
+		//if it doesn't roll for replacement
+		if (rn.nextFloat() > this.chance) return generatedLoot;
 
-        generatedLoot.clear();
-        ItemStack replacementStack = new ItemStack(replacementItem);
-        replacementStack.setCount(rn.nextIntBetweenInclusive(this.minCount, this.maxCount));
-        generatedLoot.add(replacementStack);
-        return generatedLoot;
-    }
+		generatedLoot.clear();
+		ItemStack replacementStack = new ItemStack(replacementItem);
+		replacementStack.setCount(rn.nextIntBetweenInclusive(this.minCount, this.maxCount));
+		generatedLoot.add(replacementStack);
+		return generatedLoot;
+	}
 
 }

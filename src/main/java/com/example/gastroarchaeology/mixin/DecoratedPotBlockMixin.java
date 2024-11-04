@@ -18,34 +18,34 @@ import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(DecoratedPotBlock.class)
 public abstract class DecoratedPotBlockMixin extends BaseEntityBlock {
-    protected DecoratedPotBlockMixin(Properties properties) {
-        super(properties);
-    }
+	protected DecoratedPotBlockMixin(Properties properties) {
+		super(properties);
+	}
 
-    @Override
-    protected boolean isRandomlyTicking(BlockState blockState) {
-        return true;
-    }
+	@Override
+	protected boolean isRandomlyTicking(BlockState blockState) {
+		return true;
+	}
 
-    @Override
-    protected void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
-        if (randomSource.nextInt(10) == 0 && !serverLevel.isClientSide()) {
-            BlockEntity blockEntity = serverLevel.getBlockEntity(blockPos);
-            if (blockEntity instanceof DecoratedPotBlockEntity potEntity) {
-                ItemStack itemStack = potEntity.getTheItem();
-                if (!itemStack.isEmpty() && itemStack.is(Items.MILK_BUCKET)) {
-                    potEntity.setTheItem(itemStack.transmuteCopy(GastroAItems.CURD_BUCKET.get()));
+	@Override
+	protected void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
+		if (randomSource.nextInt(10) == 0 && !serverLevel.isClientSide()) {
+			BlockEntity blockEntity = serverLevel.getBlockEntity(blockPos);
+			if (blockEntity instanceof DecoratedPotBlockEntity potEntity) {
+				ItemStack itemStack = potEntity.getTheItem();
+				if (!itemStack.isEmpty() && itemStack.is(Items.MILK_BUCKET)) {
+					potEntity.setTheItem(itemStack.transmuteCopy(GastroAItems.CURD_BUCKET.get()));
 
-                    Vec3 centerPos = blockPos.getCenter();
-                    serverLevel.sendParticles(
-                            ParticleTypes.HAPPY_VILLAGER,
-                            centerPos.x(), centerPos.y() + 0.8, centerPos.z(),
-                            10, 0.4, 0.2, 0.4,0
-                    );
-                }
-            }
-        }
-        
-        super.randomTick(blockState, serverLevel, blockPos, randomSource);
-    }
+					Vec3 centerPos = blockPos.getCenter();
+					serverLevel.sendParticles(
+							ParticleTypes.HAPPY_VILLAGER,
+							centerPos.x(), centerPos.y() + 0.8, centerPos.z(),
+							10, 0.4, 0.2, 0.4,0
+					);
+				}
+			}
+		}
+		
+		super.randomTick(blockState, serverLevel, blockPos, randomSource);
+	}
 }

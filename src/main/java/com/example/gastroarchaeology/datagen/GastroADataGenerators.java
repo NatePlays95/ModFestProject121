@@ -19,27 +19,27 @@ import java.util.concurrent.CompletableFuture;
 @EventBusSubscriber(modid = Gastroarchaeology.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class GastroADataGenerators {
 
-    @SubscribeEvent
-    public static void gatherData(GatherDataEvent event) {
-        DataGenerator generator = event.getGenerator();
-        PackOutput packOutput = generator.getPackOutput();
-        ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+	@SubscribeEvent
+	public static void gatherData(GatherDataEvent event) {
+		DataGenerator generator = event.getGenerator();
+		PackOutput packOutput = generator.getPackOutput();
+		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
-                List.of(new LootTableProvider.SubProviderEntry(GastroABlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
+		generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
+				List.of(new LootTableProvider.SubProviderEntry(GastroABlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
 
-        BlockTagsProvider blockTagsProvider = new GastroABlockTagProvider(packOutput, lookupProvider, existingFileHelper);
-        generator.addProvider(event.includeServer(), blockTagsProvider);
-        generator.addProvider(event.includeServer(), new GastroAItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+		BlockTagsProvider blockTagsProvider = new GastroABlockTagProvider(packOutput, lookupProvider, existingFileHelper);
+		generator.addProvider(event.includeServer(), blockTagsProvider);
+		generator.addProvider(event.includeServer(), new GastroAItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
 
-        generator.addProvider(event.includeClient(), new GastroAItemModelProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new GastroABlockStateProvider(packOutput, existingFileHelper));
+		generator.addProvider(event.includeClient(), new GastroAItemModelProvider(packOutput, existingFileHelper));
+		generator.addProvider(event.includeClient(), new GastroABlockStateProvider(packOutput, existingFileHelper));
 
-        generator.addProvider(event.includeServer(), new GastroARecipeProvider(packOutput, lookupProvider));
+		generator.addProvider(event.includeServer(), new GastroARecipeProvider(packOutput, lookupProvider));
 
-        generator.addProvider(event.includeServer(), new GastroADataMapProvider(packOutput, lookupProvider));
+		generator.addProvider(event.includeServer(), new GastroADataMapProvider(packOutput, lookupProvider));
 
-        generator.addProvider(event.includeServer(), new GastroAGlobalLootModifierProvider(packOutput, lookupProvider));
-    }
+		generator.addProvider(event.includeServer(), new GastroAGlobalLootModifierProvider(packOutput, lookupProvider));
+	}
 }

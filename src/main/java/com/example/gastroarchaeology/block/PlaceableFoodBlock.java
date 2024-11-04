@@ -25,106 +25,106 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public abstract class PlaceableFoodBlock extends Block {
 
-    public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 9);
+	public static final IntegerProperty BITES = IntegerProperty.create("bites", 0, 9);
 
-    public PlaceableFoodBlock(Properties properties) {
-        super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(BITES, Integer.valueOf(0)));
-    }
-
-
-
-
-    public abstract int getMaxBites();
-    public abstract boolean canAlwaysEat();
-
-    /**
-     * How many hunger bars a bite of this food fills. Max is 20.
-     */
-    public abstract int getBiteFullness();
-
-    public abstract float getBiteSaturation();
-
-    public abstract net.minecraft.sounds.SoundEvent getEatSound();
-
-    //Override this on children
-//    public VoxelShape getShapeByBite(BlockState state) {return Shapes.block();}
-    public abstract VoxelShape getShapeByBite(BlockState state);
-
-    public IntegerProperty getBitesProperty() {
-        return BITES;
-    }
-
-
-    @Override
-    protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return this.getShapeByBite(state);
-    }
-
-    @Override
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(BITES);
-    }
-
-    @Override
-    protected BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
-        return facing == Direction.DOWN && !state.canSurvive(level, currentPos)
-                ? Blocks.AIR.defaultBlockState()
-                : super.updateShape(state, facing, facingState, level, currentPos, facingPos);
-    }
-
-    @Override
-    protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.below()).isSolid(); //requires a block below
-    }
+	public PlaceableFoodBlock(Properties properties) {
+		super(properties);
+		this.registerDefaultState(this.stateDefinition.any().setValue(BITES, Integer.valueOf(0)));
+	}
 
 
 
 
-    @Override
-    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
-                                              Player player, InteractionHand hand, BlockHitResult hitResult) {
-        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-    }
+	public abstract int getMaxBites();
+	public abstract boolean canAlwaysEat();
 
-    @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if (level.isClientSide) {
-            if (this.eat(level, pos, state, player).consumesAction()) {
-                return InteractionResult.SUCCESS;
-            }
+	/**
+	 * How many hunger bars a bite of this food fills. Max is 20.
+	 */
+	public abstract int getBiteFullness();
 
-            if (player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty()) {
-                return InteractionResult.CONSUME;
-            }
-        }
+	public abstract float getBiteSaturation();
 
-        return eat(level, pos, state, player);
-    }
+	public abstract net.minecraft.sounds.SoundEvent getEatSound();
 
-    protected InteractionResult eat(LevelAccessor level, BlockPos pos, BlockState state, Player player) {
-        if (!player.canEat(this.canAlwaysEat())) {
-            return InteractionResult.PASS;
-        } else {
-//            player.awardStat(Stats.EAT_CAKE_SLICE);
-            player.getFoodData().eat(this.getBiteFullness(), this.getBiteSaturation());
-            int i = state.getValue(this.getBitesProperty());
-            level.playSound(player, pos, this.getEatSound(), SoundSource.PLAYERS, 1.0F, 1.0F);
-            level.gameEvent(player, GameEvent.EAT, pos);
-            if (i < this.getMaxBites()) {
-                level.setBlock(pos, state.setValue(this.getBitesProperty(), i + 1), 3);
-            } else {
-                level.removeBlock(pos, false);
-                level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
-                dropResources(state, (Level) level, pos, null, player, ItemStack.EMPTY);
-            }
+	//Override this on children
+//	public VoxelShape getShapeByBite(BlockState state) {return Shapes.block();}
+	public abstract VoxelShape getShapeByBite(BlockState state);
 
-            return InteractionResult.SUCCESS;
-        }
-    }
+	public IntegerProperty getBitesProperty() {
+		return BITES;
+	}
 
-    @Override
-    protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
-        return false;
-    }
+
+	@Override
+	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+		return this.getShapeByBite(state);
+	}
+
+	@Override
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		builder.add(BITES);
+	}
+
+	@Override
+	protected BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
+		return facing == Direction.DOWN && !state.canSurvive(level, currentPos)
+				? Blocks.AIR.defaultBlockState()
+				: super.updateShape(state, facing, facingState, level, currentPos, facingPos);
+	}
+
+	@Override
+	protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+		return level.getBlockState(pos.below()).isSolid(); //requires a block below
+	}
+
+
+
+
+	@Override
+	protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
+											  Player player, InteractionHand hand, BlockHitResult hitResult) {
+		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+	}
+
+	@Override
+	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
+		if (level.isClientSide) {
+			if (this.eat(level, pos, state, player).consumesAction()) {
+				return InteractionResult.SUCCESS;
+			}
+
+			if (player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty()) {
+				return InteractionResult.CONSUME;
+			}
+		}
+
+		return eat(level, pos, state, player);
+	}
+
+	protected InteractionResult eat(LevelAccessor level, BlockPos pos, BlockState state, Player player) {
+		if (!player.canEat(this.canAlwaysEat())) {
+			return InteractionResult.PASS;
+		} else {
+//			player.awardStat(Stats.EAT_CAKE_SLICE);
+			player.getFoodData().eat(this.getBiteFullness(), this.getBiteSaturation());
+			int i = state.getValue(this.getBitesProperty());
+			level.playSound(player, pos, this.getEatSound(), SoundSource.PLAYERS, 1.0F, 1.0F);
+			level.gameEvent(player, GameEvent.EAT, pos);
+			if (i < this.getMaxBites()) {
+				level.setBlock(pos, state.setValue(this.getBitesProperty(), i + 1), 3);
+			} else {
+				level.removeBlock(pos, false);
+				level.gameEvent(player, GameEvent.BLOCK_DESTROY, pos);
+				dropResources(state, (Level) level, pos, null, player, ItemStack.EMPTY);
+			}
+
+			return InteractionResult.SUCCESS;
+		}
+	}
+
+	@Override
+	protected boolean isPathfindable(BlockState state, PathComputationType pathComputationType) {
+		return false;
+	}
 }

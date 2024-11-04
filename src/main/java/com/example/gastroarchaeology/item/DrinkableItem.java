@@ -6,17 +6,17 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 
 public class DrinkableItem extends Item {
-    public DrinkableItem(Properties properties) {
-        super(properties);
-    }
+	public DrinkableItem(Properties properties) {
+		super(properties);
+	}
 
-    @Override
-    public int getUseDuration(ItemStack stack, LivingEntity entity) {
-        return 32;
-    }
+	@Override
+	public int getUseDuration(ItemStack stack, LivingEntity entity) {
+		return 32;
+	}
 
-    @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.DRINK;
-    }
+	@Override
+	public UseAnim getUseAnimation(ItemStack stack) {
+		return UseAnim.DRINK;
+	}
 }
