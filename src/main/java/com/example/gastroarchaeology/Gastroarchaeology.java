@@ -69,6 +69,7 @@ public class Gastroarchaeology
 				output.accept(new ItemStack(GastroAItems.PIZZA_RECIPE.get()));
 				output.accept(new ItemStack(GastroABlocks.PIZZA.get()));
 				output.accept(new ItemStack(GastroABlocks.BRAZILIAN_PIZZA.get()));
+				output.accept(new ItemStack(Items.SMOKER));
 				output.accept(new ItemStack(Items.STONECUTTER));
 				output.accept(new ItemStack(Items.DECORATED_POT));
 				output.accept(new ItemStack(Items.WATER_BUCKET));
@@ -88,6 +89,7 @@ public class Gastroarchaeology
 				output.accept(new ItemStack(Items.WHEAT));
 				output.accept(new ItemStack(Items.SUGAR));
 				output.accept(new ItemStack(Items.BONE_MEAL));
+				output.accept(new ItemStack(Items.RED_DYE));
 			})
 			.build());
 
