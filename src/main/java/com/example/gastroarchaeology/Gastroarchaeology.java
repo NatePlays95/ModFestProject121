@@ -1,11 +1,14 @@
 package com.example.gastroarchaeology;
 
 import com.example.gastroarchaeology.block.GastroABlocks;
+import com.example.gastroarchaeology.compat.GastroAChickensaurs;
+import com.example.gastroarchaeology.compat.GastroAChickensaursRecipeProvider;
 import com.example.gastroarchaeology.effect.GastroAMobEffects;
 import com.example.gastroarchaeology.item.GastroAItems;
 import com.example.gastroarchaeology.loot.modifiers.GastroALootModifiers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
+import net.neoforged.fml.ModList;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -106,6 +109,10 @@ public class Gastroarchaeology
         GastroABlocks.register(modEventBus);
         GastroAMobEffects.register(modEventBus);
         GastroALootModifiers.register(modEventBus);
+
+		if (ModList.get().isLoaded("chickensaurs")){
+			GastroAChickensaurs.register(modEventBus);
+		}
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
