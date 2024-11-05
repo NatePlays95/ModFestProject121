@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "gastroarchaeology:pacoca_recipe"
+    },
+    {
+      "item": "gastroarchaeology:cassava_flour"
+    },
+    {
+      "item": "minecraft:cooked_beef"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "id": "gastroarchaeology:beef_pacoca"
+  }
+}

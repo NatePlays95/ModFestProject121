@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "gastroarchaeology:tapioca_recipe"
+    },
+    {
+      "item": "gastroarchaeology:tapioca_dough"
+    },
+    {
+      "item": "minecraft:cooked_beef"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "gastroarchaeology:tapioca_beef_wrap"
+  }
+}

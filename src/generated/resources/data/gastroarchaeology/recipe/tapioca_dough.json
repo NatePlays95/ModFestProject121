@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "gastroarchaeology:crushed_cassava"
+    },
+    {
+      "item": "gastroarchaeology:crushed_cassava"
+    },
+    {
+      "item": "gastroarchaeology:crushed_cassava"
+    },
+    {
+      "item": "gastroarchaeology:crushed_cassava"
+    },
+    {
+      "item": "gastroarchaeology:crushed_cassava"
+    },
+    {
+      "item": "gastroarchaeology:crushed_cassava"
+    },
+    {
+      "item": "gastroarchaeology:crushed_cassava"
+    },
+    {
+      "item": "gastroarchaeology:crushed_cassava"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "gastroarchaeology:tapioca_dough"
+  }
+}

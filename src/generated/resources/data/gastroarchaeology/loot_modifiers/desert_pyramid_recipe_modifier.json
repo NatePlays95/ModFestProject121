@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "gastroarchaeology"
+    }
+  ],
+  "type": "gastroarchaeology:random_override_loot_modifier",
+  "chance": 0.05,
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:archaeology/desert_pyramid"
+    }
+  ],
+  "max_count": 1,
+  "min_count": 1,
+  "replacement_item": "gastroarchaeology:pizza_recipe"
+}

@@ -1,0 +1,65 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_curd_bucket": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gastroarchaeology:curd_bucket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_honey_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:honey_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sugar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sugar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gastroarchaeology:honey_carrot_yogurt"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yogurt_recipe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gastroarchaeology:yogurt_recipe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_yogurt_recipe",
+      "has_sugar",
+      "has_honey_bottle",
+      "has_curd_bucket"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gastroarchaeology:honey_carrot_yogurt"
+    ]
+  }
+}

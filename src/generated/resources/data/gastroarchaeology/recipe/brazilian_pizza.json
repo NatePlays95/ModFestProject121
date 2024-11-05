@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "gastroarchaeology:cheese"
+    },
+    "D": {
+      "item": "minecraft:wheat"
+    },
+    "F": {
+      "tag": "c:foods"
+    },
+    "R": {
+      "item": "gastroarchaeology:pizza_recipe"
+    },
+    "S": {
+      "item": "gastroarchaeology:tomato"
+    }
+  },
+  "pattern": [
+    "FFF",
+    "SRC",
+    "DDD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "gastroarchaeology:brazilian_pizza"
+  }
+}
