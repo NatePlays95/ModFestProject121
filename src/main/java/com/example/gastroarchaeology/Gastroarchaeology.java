@@ -34,44 +34,61 @@ public class Gastroarchaeology
     public static final String MOD_ID = "gastroarchaeology";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> GASTROARCHEOLOGY_TAB = CREATIVE_MODE_TABS.register("gastroarchaeology_tab", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.gastroarchaeology"))
-            .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> new ItemStack(GastroAItems.PEPPER.get()))
-            .displayItems((parameters, output) -> {
-                output.accept(new ItemStack(GastroAItems.CASSAVA.get()));
-                output.accept(new ItemStack(GastroAItems.BAKED_CASSAVA.get()));
-                output.accept(new ItemStack(GastroAItems.CRUSHED_CASSAVA.get()));
-                output.accept(new ItemStack(GastroAItems.CASSAVA_DOUGH.get()));
-                output.accept(new ItemStack(GastroAItems.CASSAVA_FLOUR.get()));
-                output.accept(new ItemStack(GastroAItems.TAPIOCA_DOUGH.get()));
-                output.accept(new ItemStack(GastroAItems.PEPPER.get()));
-                output.accept(new ItemStack(GastroAItems.TOMATO.get()));
-                output.accept(new ItemStack(GastroAItems.CURD_BUCKET.get()));
-                output.accept(new ItemStack(GastroAItems.CURD_MIXTURE.get()));
-                output.accept(new ItemStack(GastroAItems.CHEESE.get()));
-                output.accept(new ItemStack(GastroABlocks.SPICY_CHIPS.get()));
-                output.accept(new ItemStack(GastroABlocks.EXTRA_SPICY_CHIPS.get()));
-                output.accept(new ItemStack(GastroAItems.TAPIOCA_RECIPE.get()));
-                output.accept(new ItemStack(GastroAItems.TAPIOCA_BEEF_WRAP.get()));
-                output.accept(new ItemStack(GastroAItems.TAPIOCA_CHEESE_WRAP.get()));
-                output.accept(new ItemStack(GastroAItems.TAPIOCA_HAM_AND_CHEESE_WRAP.get()));
-                output.accept(new ItemStack(GastroAItems.PACOCA_RECIPE.get()));
-                output.accept(new ItemStack(GastroAItems.BEEF_PACOCA.get()));
-                output.accept(new ItemStack(GastroAItems.PORK_PACOCA.get()));
-                output.accept(new ItemStack(GastroAItems.CHICKEN_PACOCA.get()));
-                output.accept(new ItemStack(GastroAItems.FISH_PACOCA.get()));
-                output.accept(new ItemStack(GastroAItems.YOGURT_RECIPE.get()));
-                output.accept(new ItemStack(GastroAItems.SWEET_BERRY_YOGURT.get()));
-                output.accept(new ItemStack(GastroAItems.GLOW_BERRY_YOGURT.get()));
-                output.accept(new ItemStack(GastroAItems.HONEY_CARROT_YOGURT.get()));
-                output.accept(new ItemStack(GastroAItems.CHORUS_FRUIT_YOGURT.get()));
-                output.accept(new ItemStack(GastroAItems.PIZZA_RECIPE.get()));
-                output.accept(new ItemStack(GastroABlocks.PIZZA.get()));
-                output.accept(new ItemStack(GastroABlocks.BRAZILIAN_PIZZA.get()));
-            })
-            .build());
+	public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
+	public static final DeferredHolder<CreativeModeTab, CreativeModeTab> GASTROARCHEOLOGY_TAB = CREATIVE_MODE_TABS.register("gastroarchaeology_tab", () -> CreativeModeTab.builder()
+			.title(Component.translatable("itemGroup.gastroarchaeology"))
+			.icon(() -> new ItemStack(GastroAItems.PEPPER.get()))
+			.displayItems((parameters, output) -> {
+				output.accept(new ItemStack(GastroAItems.CASSAVA.get()));
+				output.accept(new ItemStack(GastroAItems.BAKED_CASSAVA.get()));
+				output.accept(new ItemStack(GastroAItems.CRUSHED_CASSAVA.get()));
+				output.accept(new ItemStack(GastroAItems.CASSAVA_DOUGH.get()));
+				output.accept(new ItemStack(GastroAItems.CASSAVA_FLOUR.get()));
+				output.accept(new ItemStack(GastroAItems.TAPIOCA_DOUGH.get()));
+				output.accept(new ItemStack(GastroAItems.PEPPER.get()));
+				output.accept(new ItemStack(GastroAItems.TOMATO.get()));
+				output.accept(new ItemStack(GastroAItems.CURD_BUCKET.get()));
+				output.accept(new ItemStack(GastroAItems.CURD_MIXTURE.get()));
+				output.accept(new ItemStack(GastroAItems.CHEESE.get()));
+				output.accept(new ItemStack(GastroABlocks.SPICY_CHIPS.get()));
+				output.accept(new ItemStack(GastroABlocks.EXTRA_SPICY_CHIPS.get()));
+				output.accept(new ItemStack(GastroAItems.TAPIOCA_RECIPE.get()));
+				output.accept(new ItemStack(GastroAItems.TAPIOCA_BEEF_WRAP.get()));
+				output.accept(new ItemStack(GastroAItems.TAPIOCA_CHEESE_WRAP.get()));
+				output.accept(new ItemStack(GastroAItems.TAPIOCA_HAM_AND_CHEESE_WRAP.get()));
+				output.accept(new ItemStack(GastroAItems.PACOCA_RECIPE.get()));
+				output.accept(new ItemStack(GastroAItems.BEEF_PACOCA.get()));
+				output.accept(new ItemStack(GastroAItems.PORK_PACOCA.get()));
+				output.accept(new ItemStack(GastroAItems.CHICKEN_PACOCA.get()));
+				output.accept(new ItemStack(GastroAItems.FISH_PACOCA.get()));
+				output.accept(new ItemStack(GastroAItems.YOGURT_RECIPE.get()));
+				output.accept(new ItemStack(GastroAItems.SWEET_BERRY_YOGURT.get()));
+				output.accept(new ItemStack(GastroAItems.GLOW_BERRY_YOGURT.get()));
+				output.accept(new ItemStack(GastroAItems.HONEY_CARROT_YOGURT.get()));
+				output.accept(new ItemStack(GastroAItems.CHORUS_FRUIT_YOGURT.get()));
+				output.accept(new ItemStack(GastroAItems.PIZZA_RECIPE.get()));
+				output.accept(new ItemStack(GastroABlocks.PIZZA.get()));
+				output.accept(new ItemStack(GastroABlocks.BRAZILIAN_PIZZA.get()));
+				output.accept(new ItemStack(Items.STONECUTTER));
+				output.accept(new ItemStack(Items.DECORATED_POT));
+				output.accept(new ItemStack(Items.WATER_BUCKET));
+				output.accept(new ItemStack(Items.MILK_BUCKET));
+				output.accept(new ItemStack(Items.BOWL));
+				output.accept(new ItemStack(Items.GLASS_BOTTLE));
+				output.accept(new ItemStack(Items.HONEY_BOTTLE));
+				output.accept(new ItemStack(Items.COOKED_BEEF));
+				output.accept(new ItemStack(Items.COOKED_PORKCHOP));
+				output.accept(new ItemStack(Items.COOKED_CHICKEN));
+				output.accept(new ItemStack(Items.COOKED_COD));
+				output.accept(new ItemStack(Items.BAKED_POTATO));
+				output.accept(new ItemStack(Items.SWEET_BERRIES));
+				output.accept(new ItemStack(Items.GLOW_BERRIES));
+				output.accept(new ItemStack(Items.CHORUS_FRUIT));
+				output.accept(new ItemStack(Items.CARROT));
+				output.accept(new ItemStack(Items.WHEAT));
+				output.accept(new ItemStack(Items.BONE_MEAL));
+			})
+			.build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
