@@ -2,6 +2,7 @@
   "values": [
     "gastroarchaeology:cassava",
     "gastroarchaeology:baked_cassava",
+    "gastroarchaeology:cassava_flour",
     "gastroarchaeology:pepper",
     "gastroarchaeology:tomato",
     "gastroarchaeology:curd_bucket",
@@ -9,6 +10,10 @@
     "gastroarchaeology:tapioca_beef_wrap",
     "gastroarchaeology:tapioca_cheese_wrap",
     "gastroarchaeology:tapioca_ham_and_cheese_wrap",
+    "gastroarchaeology:beef_pacoca",
+    "gastroarchaeology:pork_pacoca",
+    "gastroarchaeology:chicken_pacoca",
+    "gastroarchaeology:fish_pacoca",
     "gastroarchaeology:sweet_berry_yogurt",
     "gastroarchaeology:glow_berry_yogurt",
     "gastroarchaeology:honey_carrot_yogurt",
