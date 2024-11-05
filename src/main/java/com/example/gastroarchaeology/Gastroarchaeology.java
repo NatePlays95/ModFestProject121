@@ -1,7 +1,7 @@
 package com.example.gastroarchaeology;
 
 import com.example.gastroarchaeology.block.GastroABlocks;
-import com.example.gastroarchaeology.effect.GatroAMobEffects;
+import com.example.gastroarchaeology.effect.GastroAMobEffects;
 import com.example.gastroarchaeology.item.GastroAItems;
 import com.example.gastroarchaeology.loot.modifiers.GastroALootModifiers;
 import net.minecraft.resources.ResourceLocation;
@@ -86,6 +86,7 @@ public class Gastroarchaeology
 				output.accept(new ItemStack(Items.CHORUS_FRUIT));
 				output.accept(new ItemStack(Items.CARROT));
 				output.accept(new ItemStack(Items.WHEAT));
+				output.accept(new ItemStack(Items.SUGAR));
 				output.accept(new ItemStack(Items.BONE_MEAL));
 			})
 			.build());
@@ -101,7 +102,7 @@ public class Gastroarchaeology
 
         GastroAItems.register(modEventBus);
         GastroABlocks.register(modEventBus);
-        GatroAMobEffects.register(modEventBus);
+        GastroAMobEffects.register(modEventBus);
         GastroALootModifiers.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.

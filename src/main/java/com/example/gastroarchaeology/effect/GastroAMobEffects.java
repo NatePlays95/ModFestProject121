@@ -8,7 +8,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-public class GatroAMobEffects {
+public class GastroAMobEffects {
     public static final DeferredRegister<MobEffect> EFFECTS = DeferredRegister.create(Registries.MOB_EFFECT, Gastroarchaeology.MOD_ID);
 
     public static final DeferredHolder<MobEffect, MobEffect> BURNING = EFFECTS.register(

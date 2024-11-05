@@ -6,7 +6,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 
-public class BurningMobEffect extends GatroAMobEffects.GastroAMobEffect {
+public class BurningMobEffect extends GastroAMobEffects.GastroAMobEffect {
     protected BurningMobEffect(MobEffectCategory pCategory, int pColor) {
         super(pCategory, pColor);
     }
