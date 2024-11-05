@@ -60,6 +60,7 @@ public class GastroAItemTagProvider extends ItemTagsProvider {
                 .add(GastroABlocks.BRAZILIAN_PIZZA.asItem())
                 .add(GastroABlocks.SPICY_CHIPS.asItem())
                 .add(GastroABlocks.EXTRA_SPICY_CHIPS.asItem());
+
 //        tag(ModTags.Items.TRANSFORMABLE_ITEM.TAPIOCA_CHEESE_WRAP.get())));
 //                .add(ModItems.EARTH_CRYSTAL.get())
 //                .add(ModItems.MALACHITE_CHUNK.get())
