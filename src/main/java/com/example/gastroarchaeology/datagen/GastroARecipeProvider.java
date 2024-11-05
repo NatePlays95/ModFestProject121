@@ -2,7 +2,9 @@ package com.example.gastroarchaeology.datagen;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
 import com.example.gastroarchaeology.block.GastroABlocks;
+import com.example.gastroarchaeology.compat.GastroAChickensaurs;
 import com.example.gastroarchaeology.item.GastroAItems;
+import net.hyper_pigeon.chickensaurs.register.ItemRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -210,6 +212,14 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .unlockedBy("has_tapioca_dough", has(GastroAItems.TAPIOCA_DOUGH))
                 .save(recipeOutput);
 
+        //Compat
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAChickensaurs.CHICKENSAUR_PACOCA, 2)
+                .requires(GastroAItems.PACOCA_RECIPE)
+                .requires(GastroAItems.CASSAVA_FLOUR)
+                .requires(ItemRegistry.COOKED_CHICKENSAUR.get())
+                .unlockedBy("has_pacoca_recipe", has(GastroAItems.PACOCA_RECIPE))
+                .unlockedBy("has_cassava_flour", has(GastroAItems.CASSAVA_FLOUR))
+                .save(recipeOutput.withConditions(modLoaded("chickensaurs")));
     }
 
     protected static void tripleCookingRecipe(RecipeOutput recipeOutput, int cookingTime, ItemLike material, ItemLike result, float experience) {

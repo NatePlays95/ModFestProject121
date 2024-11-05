@@ -23,13 +23,6 @@ public class GastroAChickensaurs {
             )
     );
 
-    @SubscribeEvent
-    public static void buildContents(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == Gastroarchaeology.GASTROARCHEOLOGY_TAB.getKey()) {
-            event.accept(GastroAChickensaurs.CHICKENSAUR_PACOCA.get());
-        }
-    }
-
     public static void register(IEventBus eventBus) {
         CHICKENSAURS_ITEMS.register(eventBus);
     }

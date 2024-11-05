@@ -2,13 +2,14 @@ package com.example.gastroarchaeology;
 
 import com.example.gastroarchaeology.block.GastroABlocks;
 import com.example.gastroarchaeology.compat.GastroAChickensaurs;
-import com.example.gastroarchaeology.compat.GastroAChickensaursRecipeProvider;
 import com.example.gastroarchaeology.effect.GastroAMobEffects;
 import com.example.gastroarchaeology.item.GastroAItems;
 import com.example.gastroarchaeology.loot.modifiers.GastroALootModifiers;
+import net.hyper_pigeon.chickensaurs.register.ItemRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.data.loading.DatagenModLoader;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -64,6 +65,8 @@ public class Gastroarchaeology
 				output.accept(new ItemStack(GastroAItems.PORK_PACOCA.get()));
 				output.accept(new ItemStack(GastroAItems.CHICKEN_PACOCA.get()));
 				output.accept(new ItemStack(GastroAItems.FISH_PACOCA.get()));
+				if (ModList.get().isLoaded("chickensaurs"))
+					output.accept(new ItemStack(GastroAChickensaurs.CHICKENSAUR_PACOCA.get()));
 				output.accept(new ItemStack(GastroAItems.YOGURT_RECIPE.get()));
 				output.accept(new ItemStack(GastroAItems.SWEET_BERRY_YOGURT.get()));
 				output.accept(new ItemStack(GastroAItems.GLOW_BERRY_YOGURT.get()));
@@ -84,6 +87,8 @@ public class Gastroarchaeology
 				output.accept(new ItemStack(Items.COOKED_PORKCHOP));
 				output.accept(new ItemStack(Items.COOKED_CHICKEN));
 				output.accept(new ItemStack(Items.COOKED_COD));
+				if (ModList.get().isLoaded("chickensaurs"))
+					output.accept(new ItemStack(ItemRegistry.COOKED_CHICKENSAUR.get()));
 				output.accept(new ItemStack(Items.BAKED_POTATO));
 				output.accept(new ItemStack(Items.SWEET_BERRIES));
 				output.accept(new ItemStack(Items.GLOW_BERRIES));
@@ -110,7 +115,7 @@ public class Gastroarchaeology
         GastroAMobEffects.register(modEventBus);
         GastroALootModifiers.register(modEventBus);
 
-		if (ModList.get().isLoaded("chickensaurs")){
+		if (ModList.get().isLoaded("chickensaurs") || DatagenModLoader.isRunningDataGen()){
 			GastroAChickensaurs.register(modEventBus);
 		}
 

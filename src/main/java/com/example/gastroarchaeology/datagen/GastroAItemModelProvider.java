@@ -2,6 +2,7 @@ package com.example.gastroarchaeology.datagen;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
 import com.example.gastroarchaeology.block.GastroABlocks;
+import com.example.gastroarchaeology.compat.GastroAChickensaurs;
 import com.example.gastroarchaeology.item.GastroAItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -45,6 +46,8 @@ public class GastroAItemModelProvider extends ItemModelProvider {
         basicItem(GastroABlocks.PIZZA.asItem());
         basicItem(GastroABlocks.BRAZILIAN_PIZZA.asItem());
 
+        // Compat
+        basicItem(GastroAChickensaurs.CHICKENSAUR_PACOCA.get());
 
 //        basicItem(GastroAItems.TAPIOCA_RECIPE.get());
 //        basicItem(GastroAItems.YOGURT_RECIPE.get());
