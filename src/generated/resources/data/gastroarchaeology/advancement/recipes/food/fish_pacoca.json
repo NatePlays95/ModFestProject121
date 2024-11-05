@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_cassava_flour": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gastroarchaeology:cassava_flour"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_pacoca_recipe": {
       "conditions": {
         "items": [
@@ -21,7 +31,8 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_pacoca_recipe"
+      "has_pacoca_recipe",
+      "has_cassava_flour"
     ]
   ],
   "rewards": {

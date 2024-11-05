@@ -36,16 +36,6 @@
         "recipe": "gastroarchaeology:tapioca_dough"
       },
       "trigger": "minecraft:recipe_unlocked"
-    },
-    "has_water_bucket": {
-      "conditions": {
-        "items": [
-          {
-            "items": "minecraft:bucket"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "requirements": [
@@ -53,8 +43,7 @@
       "has_the_recipe",
       "has_crushed_cassava",
       "has_cassava",
-      "has_tapioca_recipe",
-      "has_water_bucket"
+      "has_tapioca_recipe"
     ]
   ],
   "rewards": {

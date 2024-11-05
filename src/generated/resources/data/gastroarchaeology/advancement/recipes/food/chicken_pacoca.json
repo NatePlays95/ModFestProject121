@@ -1,6 +1,16 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_cassava_flour": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gastroarchaeology:cassava_flour"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_pacoca_recipe": {
       "conditions": {
         "items": [
@@ -13,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "gastroarchaeology:pork_pacoca"
+        "recipe": "gastroarchaeology:chicken_pacoca"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +31,13 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_pacoca_recipe"
+      "has_pacoca_recipe",
+      "has_cassava_flour"
     ]
   ],
   "rewards": {
     "recipes": [
-      "gastroarchaeology:pork_pacoca"
+      "gastroarchaeology:chicken_pacoca"
     ]
   }
 }
