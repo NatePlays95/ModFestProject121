@@ -3,6 +3,7 @@ package com.example.gastroarchaeology.datagen;
 import com.example.gastroarchaeology.Gastroarchaeology;
 import com.example.gastroarchaeology.block.GastroABlocks;
 import com.example.gastroarchaeology.compat.GastroAChickensaurs;
+import com.example.gastroarchaeology.compat.GastroAMineconRuins;
 import com.example.gastroarchaeology.item.GastroAItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -53,29 +54,17 @@ public class GastroAItemTagProvider extends ItemTagsProvider {
                 .add(GastroAItems.SWEET_BERRY_YOGURT.get())
                 .add(GastroAItems.GLOW_BERRY_YOGURT.get())
                 .add(GastroAItems.HONEY_CARROT_YOGURT.get())
-                .add(GastroAItems.CHORUS_FRUIT_YOGURT.get());
+                .add(GastroAItems.CHORUS_FRUIT_YOGURT.get())
+                .add(GastroAMineconRuins.MINECON_BURGUER.get())
+                .add(GastroAMineconRuins.MINECON_TACO.get())
+                .add(GastroAMineconRuins.MINECON_PIZZA_SLICE.get())
+                .add(GastroAMineconRuins.MINECON_HOT_WINGS.get())
+                .add(GastroAMineconRuins.MINECON_WAFFLE.get());
 
         tag(Tags.Items.FOODS_EDIBLE_WHEN_PLACED)
                 .add(GastroABlocks.PIZZA.asItem())
                 .add(GastroABlocks.BRAZILIAN_PIZZA.asItem())
                 .add(GastroABlocks.SPICY_CHIPS.asItem())
                 .add(GastroABlocks.EXTRA_SPICY_CHIPS.asItem());
-
-//        tag(ModTags.Items.TRANSFORMABLE_ITEM.TAPIOCA_CHEESE_WRAP.get())));
-//                .add(ModItems.EARTH_CRYSTAL.get())
-//                .add(ModItems.MALACHITE_CHUNK.get())
-//                .add(ModItems.MALACHITE_INGOT.get())
-//                .add(Items.COAL)
-//                .add(Items.DIAMOND);
-//
-//        tag(ItemTags.SWORDS).add(ModItems.MACHALITE_SWORD.get());
-//        tag(ItemTags.PICKAXES).add(ModItems.MACHALITE_PICKAXE.get());
-//        tag(ItemTags.SHOVELS).add(ModItems.MACHALITE_SHOVEL.get());
-//        tag(ItemTags.AXES).add(ModItems.MACHALITE_AXE.get());
-//        tag(ItemTags.HOES).add(ModItems.MACHALITE_HOE.get());
-//
-//        tag(ItemTags.DYEABLE)
-//                .add(ModArmorItems.F_GHOST_HELM.get())
-//                .add(ModArmorItems.F_GHOST_MAIL.get());
     }
 }

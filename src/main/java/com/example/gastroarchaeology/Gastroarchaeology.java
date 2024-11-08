@@ -2,6 +2,7 @@ package com.example.gastroarchaeology;
 
 import com.example.gastroarchaeology.block.GastroABlocks;
 import com.example.gastroarchaeology.compat.GastroAChickensaurs;
+import com.example.gastroarchaeology.compat.GastroAMineconRuins;
 import com.example.gastroarchaeology.effect.GastroAMobEffects;
 import com.example.gastroarchaeology.item.GastroAItems;
 import com.example.gastroarchaeology.loot.modifiers.GastroALootModifiers;
@@ -75,6 +76,14 @@ public class Gastroarchaeology
 				output.accept(new ItemStack(GastroAItems.PIZZA_RECIPE.get()));
 				output.accept(new ItemStack(GastroABlocks.PIZZA.get()));
 				output.accept(new ItemStack(GastroABlocks.BRAZILIAN_PIZZA.get()));
+				if (ModList.get().isLoaded("minecon_ruins")){
+					output.accept(new ItemStack(GastroAMineconRuins.MINECON_RECIPE.get()));
+					output.accept(new ItemStack(GastroAMineconRuins.MINECON_BURGUER.get()));
+					output.accept(new ItemStack(GastroAMineconRuins.MINECON_TACO.get()));
+					output.accept(new ItemStack(GastroAMineconRuins.MINECON_HOT_WINGS.get()));
+					output.accept(new ItemStack(GastroAMineconRuins.MINECON_PIZZA_SLICE.get()));
+					output.accept(new ItemStack(GastroAMineconRuins.MINECON_WAFFLE.get()));
+				}
 				output.accept(new ItemStack(Items.CRAFTING_TABLE));
 				output.accept(new ItemStack(Items.SMOKER));
 				output.accept(new ItemStack(Items.STONECUTTER));
@@ -91,6 +100,8 @@ public class Gastroarchaeology
 				if (ModList.get().isLoaded("chickensaurs"))
 					output.accept(new ItemStack(ItemRegistry.COOKED_CHICKENSAUR.get()));
 				output.accept(new ItemStack(Items.BAKED_POTATO));
+				if (ModList.get().isLoaded("minecon_ruins"))
+					output.accept(new ItemStack(Items.BREAD));
 				output.accept(new ItemStack(Items.SWEET_BERRIES));
 				output.accept(new ItemStack(Items.GLOW_BERRIES));
 				output.accept(new ItemStack(Items.CHORUS_FRUIT));
@@ -115,10 +126,10 @@ public class Gastroarchaeology
         GastroABlocks.register(modEventBus);
         GastroAMobEffects.register(modEventBus);
         GastroALootModifiers.register(modEventBus);
-
-		if (ModList.get().isLoaded("chickensaurs") || DatagenModLoader.isRunningDataGen()){
+		if (ModList.get().isLoaded("chickensaurs") || DatagenModLoader.isRunningDataGen())
 			GastroAChickensaurs.register(modEventBus);
-		}
+		if (ModList.get().isLoaded("minecon_ruins") || DatagenModLoader.isRunningDataGen())
+			GastroAMineconRuins.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.

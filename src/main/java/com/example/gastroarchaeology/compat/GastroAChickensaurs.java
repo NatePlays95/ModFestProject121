@@ -10,7 +10,6 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class GastroAChickensaurs {
-
     public static final DeferredRegister.Items CHICKENSAURS_ITEMS = DeferredRegister.createItems(Gastroarchaeology.MOD_ID);
 
     public static final DeferredItem<Item> CHICKENSAUR_PACOCA = CHICKENSAURS_ITEMS.register(

@@ -3,6 +3,7 @@ package com.example.gastroarchaeology.datagen;
 import com.example.gastroarchaeology.Gastroarchaeology;
 import com.example.gastroarchaeology.block.GastroABlocks;
 import com.example.gastroarchaeology.compat.GastroAChickensaurs;
+import com.example.gastroarchaeology.compat.GastroAMineconRuins;
 import com.example.gastroarchaeology.item.GastroAItems;
 import net.hyper_pigeon.chickensaurs.register.ItemRegistry;
 import net.minecraft.core.HolderLookup;
@@ -220,6 +221,46 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .unlockedBy("has_pacoca_recipe", has(GastroAItems.PACOCA_RECIPE))
                 .unlockedBy("has_cassava_flour", has(GastroAItems.CASSAVA_FLOUR))
                 .save(recipeOutput.withConditions(modLoaded("chickensaurs")));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAMineconRuins.MINECON_BURGUER)
+                .requires(GastroAMineconRuins.MINECON_RECIPE)
+                .requires(GastroAItems.TOMATO)
+                .requires(Items.COOKED_BEEF)
+                .requires(Items.BREAD)
+                .unlockedBy("has_minecon_recipe", has(GastroAMineconRuins.MINECON_RECIPE))
+                .save(recipeOutput.withConditions(modLoaded("minecon_ruins")));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAMineconRuins.MINECON_HOT_WINGS)
+                .requires(GastroAMineconRuins.MINECON_RECIPE)
+                .requires(GastroAItems.PEPPER)
+                .requires(Items.COOKED_CHICKEN)
+                .requires(Items.PAPER)
+                .unlockedBy("has_minecon_recipe", has(GastroAMineconRuins.MINECON_RECIPE))
+                .save(recipeOutput.withConditions(modLoaded("minecon_ruins")));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAMineconRuins.MINECON_TACO)
+                .requires(GastroAMineconRuins.MINECON_RECIPE)
+                .requires(GastroAItems.TOMATO)
+                .requires(Items.COOKED_PORKCHOP)
+                .requires(Items.WHEAT)
+                .unlockedBy("has_minecon_recipe", has(GastroAMineconRuins.MINECON_RECIPE))
+                .save(recipeOutput.withConditions(modLoaded("minecon_ruins")));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAMineconRuins.MINECON_PIZZA_SLICE)
+                .requires(GastroAMineconRuins.MINECON_RECIPE)
+                .requires(GastroAItems.TOMATO)
+                .requires(GastroAItems.CHEESE)
+                .requires(Items.WHEAT)
+                .unlockedBy("has_minecon_recipe", has(GastroAMineconRuins.MINECON_RECIPE))
+                .save(recipeOutput.withConditions(modLoaded("minecon_ruins")));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAMineconRuins.MINECON_WAFFLE)
+                .requires(GastroAMineconRuins.MINECON_RECIPE)
+                .requires(Items.CHORUS_FRUIT)
+                .requires(Items.HONEY_BOTTLE)
+                .requires(Items.WHEAT)
+                .unlockedBy("has_minecon_recipe", has(GastroAMineconRuins.MINECON_RECIPE))
+                .save(recipeOutput.withConditions(modLoaded("minecon_ruins")));
     }
 
     protected static void tripleCookingRecipe(RecipeOutput recipeOutput, int cookingTime, ItemLike material, ItemLike result, float experience) {
