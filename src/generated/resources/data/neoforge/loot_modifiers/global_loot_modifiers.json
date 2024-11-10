@@ -1,0 +1,15 @@
+{
+  "entries": [
+    "gastroarchaeology:oceanruins_cold_recipe_modifier",
+    "gastroarchaeology:oceanruins_warm_cassava_modifier",
+    "gastroarchaeology:desert_well_tomato_modifier",
+    "gastroarchaeology:desert_pyramid_recipe_modifier",
+    "gastroarchaeology:oceanruins_warm_recipe_modifier",
+    "gastroarchaeology:desert_pyramid_tomato_modifier",
+    "gastroarchaeology:trailruins_rare_recipe_modifier",
+    "gastroarchaeology:sniffer_dig_pepper_modifier",
+    "gastroarchaeology:minecon_ruins_recipe_modifier",
+    "gastroarchaeology:trailruins_common_cassava_modifier"
+  ],
+  "replace": false
+}

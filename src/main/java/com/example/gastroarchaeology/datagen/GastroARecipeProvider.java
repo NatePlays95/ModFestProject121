@@ -2,7 +2,10 @@ package com.example.gastroarchaeology.datagen;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
 import com.example.gastroarchaeology.block.GastroABlocks;
+import com.example.gastroarchaeology.compat.GastroAChickensaurs;
+import com.example.gastroarchaeology.compat.GastroAMineconRuins;
 import com.example.gastroarchaeology.item.GastroAItems;
+import net.hyper_pigeon.chickensaurs.register.ItemRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -37,7 +40,6 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .requires(Items.SUGAR)
                 .requires(Items.GLASS_BOTTLE, 3)
                 .unlockedBy("has_yogurt_recipe", has(GastroAItems.YOGURT_RECIPE))
-                .unlockedBy("has_sugar", has(Items.SUGAR))
                 .unlockedBy("has_sweet_berries", has(Items.SWEET_BERRIES))
                 .unlockedBy("has_curd_bucket", has(GastroAItems.CURD_BUCKET))
                 .save(recipeOutput);
@@ -49,7 +51,6 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .requires(Items.SUGAR)
                 .requires(Items.GLASS_BOTTLE, 3)
                 .unlockedBy("has_yogurt_recipe", has(GastroAItems.YOGURT_RECIPE))
-                .unlockedBy("has_sugar", has(Items.SUGAR))
                 .unlockedBy("has_glow_berries", has(Items.GLOW_BERRIES))
                 .unlockedBy("has_curd_bucket", has(GastroAItems.CURD_BUCKET))
                 .save(recipeOutput);
@@ -61,7 +62,6 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .requires(Items.SUGAR)
                 .requires(Items.HONEY_BOTTLE, 3)
                 .unlockedBy("has_yogurt_recipe", has(GastroAItems.YOGURT_RECIPE))
-                .unlockedBy("has_sugar", has(Items.SUGAR))
                 .unlockedBy("has_honey_bottle", has(Items.HONEY_BOTTLE))
                 .unlockedBy("has_curd_bucket", has(GastroAItems.CURD_BUCKET))
                 .save(recipeOutput);
@@ -73,7 +73,6 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .requires(Items.SUGAR)
                 .requires(Items.GLASS_BOTTLE, 3)
                 .unlockedBy("has_yogurt_recipe", has(GastroAItems.YOGURT_RECIPE))
-                .unlockedBy("has_sugar", has(Items.SUGAR))
                 .unlockedBy("has_chorus_fruit", has(Items.CHORUS_FRUIT))
                 .unlockedBy("has_curd_bucket", has(GastroAItems.CURD_BUCKET))
                 .save(recipeOutput);
@@ -103,41 +102,44 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .unlockedBy("has_tapioca_dough", has(GastroAItems.TAPIOCA_DOUGH))
                 .save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GastroAItems.TAPIOCA_DOUGH, 8)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAItems.TAPIOCA_DOUGH, 8)
                 .requires(GastroAItems.CRUSHED_CASSAVA, 8)
                 .requires(Items.WATER_BUCKET)
                 .unlockedBy("has_crushed_cassava", has(GastroAItems.CRUSHED_CASSAVA))
                 .unlockedBy("has_cassava", has(GastroAItems.CASSAVA))
                 .unlockedBy("has_tapioca_recipe", has(GastroAItems.TAPIOCA_RECIPE))
-                .unlockedBy("has_water_bucket", has(Items.BUCKET))
                 .save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GastroAItems.BEEF_PACOCA, 2)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAItems.BEEF_PACOCA, 2)
                 .requires(GastroAItems.PACOCA_RECIPE)
                 .requires(GastroAItems.CASSAVA_FLOUR)
                 .requires(Items.COOKED_BEEF)
                 .unlockedBy("has_pacoca_recipe", has(GastroAItems.PACOCA_RECIPE))
+                .unlockedBy("has_cassava_flour", has(GastroAItems.CASSAVA_FLOUR))
                 .save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GastroAItems.PORK_PACOCA, 2)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAItems.PORK_PACOCA, 2)
                 .requires(GastroAItems.PACOCA_RECIPE)
                 .requires(GastroAItems.CASSAVA_FLOUR)
                 .requires(Items.COOKED_PORKCHOP)
                 .unlockedBy("has_pacoca_recipe", has(GastroAItems.PACOCA_RECIPE))
+                .unlockedBy("has_cassava_flour", has(GastroAItems.CASSAVA_FLOUR))
                 .save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GastroAItems.CHICKEN_PACOCA, 2)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAItems.CHICKEN_PACOCA, 2)
                 .requires(GastroAItems.PACOCA_RECIPE)
                 .requires(GastroAItems.CASSAVA_FLOUR)
                 .requires(Items.COOKED_CHICKEN)
                 .unlockedBy("has_pacoca_recipe", has(GastroAItems.PACOCA_RECIPE))
+                .unlockedBy("has_cassava_flour", has(GastroAItems.CASSAVA_FLOUR))
                 .save(recipeOutput);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GastroAItems.FISH_PACOCA, 2)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAItems.FISH_PACOCA, 2)
                 .requires(GastroAItems.PACOCA_RECIPE)
                 .requires(GastroAItems.CASSAVA_FLOUR)
                 .requires(Items.COOKED_COD)
                 .unlockedBy("has_pacoca_recipe", has(GastroAItems.PACOCA_RECIPE))
+                .unlockedBy("has_cassava_flour", has(GastroAItems.CASSAVA_FLOUR))
                 .save(recipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroABlocks.SPICY_CHIPS)
@@ -211,6 +213,54 @@ public class GastroARecipeProvider extends RecipeProvider implements IConditionB
                 .unlockedBy("has_tapioca_dough", has(GastroAItems.TAPIOCA_DOUGH))
                 .save(recipeOutput);
 
+        //Compat
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAChickensaurs.CHICKENSAUR_PACOCA, 2)
+                .requires(GastroAItems.PACOCA_RECIPE)
+                .requires(GastroAItems.CASSAVA_FLOUR)
+                .requires(ItemRegistry.COOKED_CHICKENSAUR.get())
+                .unlockedBy("has_pacoca_recipe", has(GastroAItems.PACOCA_RECIPE))
+                .unlockedBy("has_cassava_flour", has(GastroAItems.CASSAVA_FLOUR))
+                .save(recipeOutput.withConditions(modLoaded("chickensaurs")));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAMineconRuins.MINECON_BURGUER)
+                .requires(GastroAMineconRuins.MINECON_RECIPE)
+                .requires(GastroAItems.TOMATO)
+                .requires(Items.COOKED_BEEF)
+                .requires(Items.BREAD)
+                .unlockedBy("has_minecon_recipe", has(GastroAMineconRuins.MINECON_RECIPE))
+                .save(recipeOutput.withConditions(modLoaded("minecon_ruins")));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAMineconRuins.MINECON_HOT_WINGS)
+                .requires(GastroAMineconRuins.MINECON_RECIPE)
+                .requires(GastroAItems.PEPPER)
+                .requires(Items.COOKED_CHICKEN)
+                .requires(Items.PAPER)
+                .unlockedBy("has_minecon_recipe", has(GastroAMineconRuins.MINECON_RECIPE))
+                .save(recipeOutput.withConditions(modLoaded("minecon_ruins")));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAMineconRuins.MINECON_TACO)
+                .requires(GastroAMineconRuins.MINECON_RECIPE)
+                .requires(GastroAItems.TOMATO)
+                .requires(Items.COOKED_PORKCHOP)
+                .requires(Items.WHEAT)
+                .unlockedBy("has_minecon_recipe", has(GastroAMineconRuins.MINECON_RECIPE))
+                .save(recipeOutput.withConditions(modLoaded("minecon_ruins")));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAMineconRuins.MINECON_PIZZA_SLICE)
+                .requires(GastroAMineconRuins.MINECON_RECIPE)
+                .requires(GastroAItems.TOMATO)
+                .requires(GastroAItems.CHEESE)
+                .requires(Items.WHEAT)
+                .unlockedBy("has_minecon_recipe", has(GastroAMineconRuins.MINECON_RECIPE))
+                .save(recipeOutput.withConditions(modLoaded("minecon_ruins")));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, GastroAMineconRuins.MINECON_WAFFLE)
+                .requires(GastroAMineconRuins.MINECON_RECIPE)
+                .requires(Items.CHORUS_FRUIT)
+                .requires(Items.HONEY_BOTTLE)
+                .requires(Items.WHEAT)
+                .unlockedBy("has_minecon_recipe", has(GastroAMineconRuins.MINECON_RECIPE))
+                .save(recipeOutput.withConditions(modLoaded("minecon_ruins")));
     }
 
     protected static void tripleCookingRecipe(RecipeOutput recipeOutput, int cookingTime, ItemLike material, ItemLike result, float experience) {

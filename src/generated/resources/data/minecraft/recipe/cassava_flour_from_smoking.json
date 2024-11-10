@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 2.0,
+  "ingredient": {
+    "item": "gastroarchaeology:cassava_dough"
+  },
+  "result": {
+    "count": 1,
+    "id": "gastroarchaeology:cassava_flour"
+  }
+}

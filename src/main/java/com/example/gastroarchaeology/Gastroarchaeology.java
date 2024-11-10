@@ -1,11 +1,16 @@
 package com.example.gastroarchaeology;
 
 import com.example.gastroarchaeology.block.GastroABlocks;
-import com.example.gastroarchaeology.effect.GatroAMobEffects;
+import com.example.gastroarchaeology.compat.GastroAChickensaurs;
+import com.example.gastroarchaeology.compat.GastroAMineconRuins;
+import com.example.gastroarchaeology.effect.GastroAMobEffects;
 import com.example.gastroarchaeology.item.GastroAItems;
 import com.example.gastroarchaeology.loot.modifiers.GastroALootModifiers;
+import net.hyper_pigeon.chickensaurs.register.ItemRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
+import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.data.loading.DatagenModLoader;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -61,6 +66,8 @@ public class Gastroarchaeology
 				output.accept(new ItemStack(GastroAItems.PORK_PACOCA.get()));
 				output.accept(new ItemStack(GastroAItems.CHICKEN_PACOCA.get()));
 				output.accept(new ItemStack(GastroAItems.FISH_PACOCA.get()));
+				if (ModList.get().isLoaded("chickensaurs"))
+					output.accept(new ItemStack(GastroAChickensaurs.CHICKENSAUR_PACOCA.get()));
 				output.accept(new ItemStack(GastroAItems.YOGURT_RECIPE.get()));
 				output.accept(new ItemStack(GastroAItems.SWEET_BERRY_YOGURT.get()));
 				output.accept(new ItemStack(GastroAItems.GLOW_BERRY_YOGURT.get()));
@@ -69,6 +76,16 @@ public class Gastroarchaeology
 				output.accept(new ItemStack(GastroAItems.PIZZA_RECIPE.get()));
 				output.accept(new ItemStack(GastroABlocks.PIZZA.get()));
 				output.accept(new ItemStack(GastroABlocks.BRAZILIAN_PIZZA.get()));
+				if (ModList.get().isLoaded("minecon_ruins")){
+					output.accept(new ItemStack(GastroAMineconRuins.MINECON_RECIPE.get()));
+					output.accept(new ItemStack(GastroAMineconRuins.MINECON_BURGUER.get()));
+					output.accept(new ItemStack(GastroAMineconRuins.MINECON_TACO.get()));
+					output.accept(new ItemStack(GastroAMineconRuins.MINECON_HOT_WINGS.get()));
+					output.accept(new ItemStack(GastroAMineconRuins.MINECON_PIZZA_SLICE.get()));
+					output.accept(new ItemStack(GastroAMineconRuins.MINECON_WAFFLE.get()));
+				}
+				output.accept(new ItemStack(Items.CRAFTING_TABLE));
+				output.accept(new ItemStack(Items.SMOKER));
 				output.accept(new ItemStack(Items.STONECUTTER));
 				output.accept(new ItemStack(Items.DECORATED_POT));
 				output.accept(new ItemStack(Items.WATER_BUCKET));
@@ -80,13 +97,19 @@ public class Gastroarchaeology
 				output.accept(new ItemStack(Items.COOKED_PORKCHOP));
 				output.accept(new ItemStack(Items.COOKED_CHICKEN));
 				output.accept(new ItemStack(Items.COOKED_COD));
+				if (ModList.get().isLoaded("chickensaurs"))
+					output.accept(new ItemStack(ItemRegistry.COOKED_CHICKENSAUR.get()));
 				output.accept(new ItemStack(Items.BAKED_POTATO));
+				if (ModList.get().isLoaded("minecon_ruins"))
+					output.accept(new ItemStack(Items.BREAD));
 				output.accept(new ItemStack(Items.SWEET_BERRIES));
 				output.accept(new ItemStack(Items.GLOW_BERRIES));
 				output.accept(new ItemStack(Items.CHORUS_FRUIT));
 				output.accept(new ItemStack(Items.CARROT));
 				output.accept(new ItemStack(Items.WHEAT));
+				output.accept(new ItemStack(Items.SUGAR));
 				output.accept(new ItemStack(Items.BONE_MEAL));
+				output.accept(new ItemStack(Items.RED_DYE));
 			})
 			.build());
 
@@ -101,8 +124,12 @@ public class Gastroarchaeology
 
         GastroAItems.register(modEventBus);
         GastroABlocks.register(modEventBus);
-        GatroAMobEffects.register(modEventBus);
+        GastroAMobEffects.register(modEventBus);
         GastroALootModifiers.register(modEventBus);
+		if (ModList.get().isLoaded("chickensaurs") || DatagenModLoader.isRunningDataGen())
+			GastroAChickensaurs.register(modEventBus);
+		if (ModList.get().isLoaded("minecon_ruins") || DatagenModLoader.isRunningDataGen())
+			GastroAMineconRuins.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.

@@ -1,6 +1,6 @@
 package com.example.gastroarchaeology.block;
 
-import com.example.gastroarchaeology.effect.GatroAMobEffects;
+import com.example.gastroarchaeology.effect.GastroAMobEffects;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -69,7 +69,7 @@ public class SpicyChipsBlock extends PlaceableFoodBlock{
     protected InteractionResult eat(LevelAccessor level, BlockPos pos, BlockState state, Player player) {
         InteractionResult result = super.eat(level, pos, state, player);
         if(result == InteractionResult.SUCCESS && level.getRandom().nextFloat() < this.chanceForSpicyChip())
-            player.addEffect(new MobEffectInstance(GatroAMobEffects.BURNING, this.spiceEffectDuration(), this.spiceEffectLevel()));
+            player.addEffect(new MobEffectInstance(GastroAMobEffects.BURNING, this.spiceEffectDuration(), this.spiceEffectLevel()));
         return result;
     }
 }

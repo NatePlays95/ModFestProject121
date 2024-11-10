@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "gastroarchaeology"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "minecon_ruins"
+    }
+  ],
+  "type": "gastroarchaeology:random_override_loot_modifier",
+  "chance": 0.05,
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecon_ruins:archaeology/minecon_ruins_common"
+    }
+  ],
+  "max_count": 1,
+  "min_count": 1,
+  "replacement_item": "gastroarchaeology:minecon_recipe"
+}

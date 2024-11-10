@@ -25,6 +25,7 @@
   "item.gastroarchaeology.pork_pacoca": "Pork Paçoca",
   "item.gastroarchaeology.chicken_pacoca": "Chicken Paçoca",
   "item.gastroarchaeology.fish_pacoca": "Fish Paçoca",
+  "item.gastroarchaeology.chickensaur_pacoca": "Chickensaur Paçoca",
   "item.gastroarchaeology.yogurt_recipe": "Yogurt Recipe",
   "item.gastroarchaeology.sweet_berry_yogurt": "Sweet Berry Yogurt",
   "item.gastroarchaeology.glow_berry_yogurt": "Glow Berry Yogurt",
@@ -33,5 +34,11 @@
   "item.gastroarchaeology.pizza_recipe": "Pizza Recipe",
   "block.gastroarchaeology.pizza": "Pizza",
   "block.gastroarchaeology.brazilian_pizza": "Brazilian Pizza",
+  "item.gastroarchaeology.minecon_recipe": "Minecon Recipe",
+  "item.gastroarchaeology.minecon_burguer": "Minecon Burguer",
+  "item.gastroarchaeology.minecon_hot_wings": "Minecon Hot Wings",
+  "item.gastroarchaeology.minecon_taco": "Minecon Taco",
+  "item.gastroarchaeology.minecon_pizza_slice": "Minecon Pizza Slice",
+  "item.gastroarchaeology.minecon_waffle": "Minecon Waffle",
   "effect.gastroarchaeology.burning": "Burning Tongue"
 }

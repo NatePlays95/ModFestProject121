@@ -1,6 +1,7 @@
 package com.example.gastroarchaeology.datagen;
 
 import com.example.gastroarchaeology.Gastroarchaeology;
+import com.example.gastroarchaeology.compat.GastroAMineconRuins;
 import com.example.gastroarchaeology.item.GastroAItems;
 import com.example.gastroarchaeology.loot.modifiers.GastroARandomOverrideLootModifier;
 import net.minecraft.core.HolderLookup;
@@ -164,6 +165,19 @@ public class GastroAGlobalLootModifierProvider extends GlobalLootModifierProvide
                         1, 1
                 ),
                 List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID))
+        );
+
+        add(
+                "minecon_ruins_recipe_modifier",
+                new GastroARandomOverrideLootModifier(
+                        new LootItemCondition[] {
+                                LootTableIdCondition.builder(ResourceLocation.parse("minecon_ruins:archaeology/minecon_ruins_common")).build()
+                        },
+                        0.05f,
+                        GastroAMineconRuins.MINECON_RECIPE.get(),
+                        1, 1
+                ),
+                List.of(new ModLoadedCondition(Gastroarchaeology.MOD_ID), new ModLoadedCondition("minecon_ruins"))
         );
 
     }

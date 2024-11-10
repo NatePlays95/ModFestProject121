@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_curd_bucket": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gastroarchaeology:curd_bucket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pizza_recipe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gastroarchaeology:pizza_recipe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gastroarchaeology:curd_mixture"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_curd_bucket",
+      "has_pizza_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gastroarchaeology:curd_mixture"
+    ]
+  }
+}

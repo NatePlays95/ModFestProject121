@@ -41,5 +41,6 @@ public class GastroADataGenerators {
         generator.addProvider(event.includeServer(), new GastroADataMapProvider(packOutput, lookupProvider));
 
         generator.addProvider(event.includeServer(), new GastroAGlobalLootModifierProvider(packOutput, lookupProvider));
+
     }
 }

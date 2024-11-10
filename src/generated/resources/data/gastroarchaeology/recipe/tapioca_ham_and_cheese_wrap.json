@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "gastroarchaeology:tapioca_recipe"
+    },
+    {
+      "item": "gastroarchaeology:tapioca_dough"
+    },
+    {
+      "item": "gastroarchaeology:cheese"
+    },
+    {
+      "item": "minecraft:cooked_porkchop"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "gastroarchaeology:tapioca_ham_and_cheese_wrap"
+  }
+}

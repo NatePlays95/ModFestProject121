@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_tapioca_dough": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gastroarchaeology:tapioca_dough"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tapioca_recipe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gastroarchaeology:tapioca_recipe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gastroarchaeology:tapioca_ham_and_cheese_wrap"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_tapioca_recipe",
+      "has_tapioca_dough"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gastroarchaeology:tapioca_ham_and_cheese_wrap"
+    ]
+  }
+}

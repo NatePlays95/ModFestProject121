@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cassava": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gastroarchaeology:cassava"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_crushed_cassava": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gastroarchaeology:crushed_cassava"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tapioca_recipe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gastroarchaeology:tapioca_recipe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gastroarchaeology:tapioca_dough"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crushed_cassava",
+      "has_cassava",
+      "has_tapioca_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gastroarchaeology:tapioca_dough"
+    ]
+  }
+}
