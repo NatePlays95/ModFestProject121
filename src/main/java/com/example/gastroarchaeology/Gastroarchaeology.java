@@ -82,8 +82,7 @@ public class Gastroarchaeology
 					output.accept(new ItemStack(GastroAMineconRuins.MINECON_TACO.get()));
 					output.accept(new ItemStack(GastroAMineconRuins.MINECON_HOT_WINGS.get()));
 					output.accept(new ItemStack(GastroAMineconRuins.MINECON_PIZZA_SLICE.get()));
-					output.accept(new ItemStack(GastroAMineconRuins.MINECON_WAFFLE.get()));
-				}
+					output.accept(new ItemStack(GastroAMineconRuins.MINECON_WAFFLE.get()));}
 				output.accept(new ItemStack(Items.CRAFTING_TABLE));
 				output.accept(new ItemStack(Items.SMOKER));
 				output.accept(new ItemStack(Items.STONECUTTER));
